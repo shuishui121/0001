@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { Part } from '@/types/part'
 import PartSketch from './PartSketch.vue'
 
@@ -12,45 +13,61 @@ const emit = defineEmits<{
   (e: 'click', part: Part): void
 }>()
 
+const { t } = useI18n()
 const imageError = ref(false)
 
 const animationDelay = computed(() => {
   return `${(props.index || 0) * 50}ms`
 })
 
+const cardAriaLabel = computed(() => {
+  return `${props.part.name}, ${props.part.code}, ${t('common.viewDetail')}`
+})
+
 function handleImageError() {
   imageError.value = true
+}
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault()
+    emit('click', props.part)
+  }
 }
 </script>
 
 <template>
-  <div
+  <article
     class="part-card"
     :style="{ animationDelay }"
+    :aria-label="cardAriaLabel"
+    tabindex="0"
+    role="button"
     @click="emit('click', part)"
+    @keydown="handleKeydown"
   >
     <div class="card-image">
       <template v-if="!imageError && part.thumbnail">
-        <img :src="part.thumbnail" :alt="part.name" @error="handleImageError" />
+        <img :src="part.thumbnail" :alt="part.name" :title="part.name" @error="handleImageError" />
       </template>
       <PartSketch v-else :part="part" size="small" />
-      <div class="card-overlay">
-        <span class="view-detail">查看详情</span>
+      <div class="card-overlay" aria-hidden="true">
+        <span class="view-detail">{{ t('common.viewDetail') }}</span>
       </div>
     </div>
     <div class="card-content">
-      <h3 class="part-name">{{ part.name }}</h3>
+      <h3 class="part-name" :title="part.name">{{ part.name }}</h3>
       <div class="part-code">{{ part.code }}</div>
-      <div class="part-tags">
-        <span class="tag tag-function">{{ part.function }}</span>
-        <span class="tag tag-material">{{ part.material }}</span>
+      <div class="part-tags" aria-hidden="false">
+        <span class="tag tag-function" :aria-label="part.function">{{ part.function }}</span>
+        <span class="tag tag-material" :aria-label="part.material">{{ part.material }}</span>
       </div>
     </div>
-    <div class="card-corner top-left"></div>
-    <div class="card-corner top-right"></div>
-    <div class="card-corner bottom-left"></div>
-    <div class="card-corner bottom-right"></div>
-  </div>
+    <div class="card-corner top-left" aria-hidden="true"></div>
+    <div class="card-corner top-right" aria-hidden="true"></div>
+    <div class="card-corner bottom-left" aria-hidden="true"></div>
+    <div class="card-corner bottom-right" aria-hidden="true"></div>
+  </article>
 </template>
 
 <style scoped>
@@ -66,6 +83,13 @@ function handleImageError() {
   box-shadow: 0 2px 10px rgba(92, 64, 51, 0.1);
 }
 
+.part-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.5), 0 8px 24px rgba(92, 64, 51, 0.18);
+  border-color: #8B4513;
+  transform: translateY(-4px);
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -79,7 +103,7 @@ function handleImageError() {
 
 .part-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(92, 64, 51, 0.2);
+  box-shadow: 0 12px 30px rgba(62, 42, 32, 0.18);
   border-color: #A68B3D;
 }
 
@@ -110,7 +134,7 @@ function handleImageError() {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(92, 64, 51, 0.7) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(62, 42, 32, 0.75) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -124,7 +148,7 @@ function handleImageError() {
   font-size: 13px;
   font-weight: 600;
   padding: 6px 16px;
-  background: rgba(196, 163, 90, 0.9);
+  background: rgba(196, 163, 90, 0.95);
   border-radius: 20px;
   transform: translateY(10px);
   transition: transform 0.3s ease;
@@ -142,7 +166,7 @@ function handleImageError() {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 16px;
   font-weight: 700;
-  color: #3E2A20;
+  color: #1A1410;
   margin: 0 0 6px 0;
   line-height: 1.4;
   overflow: hidden;
@@ -152,7 +176,7 @@ function handleImageError() {
 
 .part-code {
   font-size: 12px;
-  color: #8B4513;
+  color: #6B3410;
   margin-bottom: 10px;
   font-family: 'Consolas', monospace;
   letter-spacing: 0.5px;
@@ -172,15 +196,15 @@ function handleImageError() {
 }
 
 .tag-function {
-  background: rgba(74, 124, 89, 0.15);
-  color: #365A41;
-  border: 1px solid rgba(74, 124, 89, 0.3);
+  background: rgba(54, 90, 65, 0.18);
+  color: #25402D;
+  border: 1px solid rgba(54, 90, 65, 0.35);
 }
 
 .tag-material {
-  background: rgba(139, 69, 19, 0.15);
-  color: #8B4513;
-  border: 1px solid rgba(139, 69, 19, 0.3);
+  background: rgba(107, 52, 16, 0.18);
+  color: #6B3410;
+  border: 1px solid rgba(107, 52, 16, 0.35);
 }
 
 .card-corner {

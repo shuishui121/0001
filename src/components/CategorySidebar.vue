@@ -1,8 +1,35 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { usePartsStore } from '@/stores/parts'
-import { DIMENSION_LABELS } from '@/types/part'
+import { DIMENSION_LABELS, type DimensionType } from '@/types/part'
+
+const props = defineProps<{
+  dimensionLabels?: Record<DimensionType, string>
+}>()
 
 const store = usePartsStore()
+const { t, tm } = useI18n()
+
+function translateCategoryName(name: string): string {
+  const dim = store.currentDimension
+  const nsMap: Record<DimensionType, string> = {
+    function: 'functions',
+    material: 'materials',
+    location: 'locations'
+  }
+  const ns = nsMap[dim]
+  const translated = t(`${ns}.${name}`) as string
+  if (translated && translated !== `${ns}.${name}`) return translated
+  return name
+}
+
+function translateDimensionLabel(dim: DimensionType): string {
+  const translated = t(`dimensions.${dim}`) as string
+  if (translated && translated !== `dimensions.${dim}`) return translated
+  if (props.dimensionLabels?.[dim]) return props.dimensionLabels[dim]
+  return DIMENSION_LABELS[dim]
+}
 
 function handleCategoryClick(categoryId: string) {
   if (store.selectedCategory === categoryId) {
@@ -11,46 +38,106 @@ function handleCategoryClick(categoryId: string) {
     store.selectCategory(categoryId)
   }
 }
+
+function handleCategoryKeydown(event: KeyboardEvent, categoryId: string) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault()
+    handleCategoryClick(categoryId)
+  }
+}
+
+function handleClearKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault()
+    store.selectCategory(null)
+  }
+}
+
+const currentDimensionLabel = computed(() => {
+  const dim = store.currentDimension
+  return translateDimensionLabel(dim)
+})
+
+const sidebarTitle = computed(() => t('sidebar.title', { dimension: currentDimensionLabel.value }))
+
+function getCategoryAriaLabel(category: { id: string; name: string; count: number }, isActive: boolean) {
+  const status = isActive ? t('sidebar.selected') : ''
+  const translatedName = translateCategoryName(category.name)
+  return `${translatedName}, ${t('sidebar.itemCount', { count: category.count })}${status}`
+}
 </script>
 
 <template>
-  <aside class="category-sidebar">
-    <div class="sidebar-header">
+  <aside
+    class="category-sidebar"
+    role="complementary"
+    :aria-label="sidebarTitle"
+  >
+    <header class="sidebar-header">
       <h3 class="sidebar-title">
-        <span class="title-icon">📜</span>
-        {{ DIMENSION_LABELS[store.currentDimension] }}分类
+        <span class="title-icon" aria-hidden="true">📜</span>
+        {{ sidebarTitle }}
       </h3>
       <button
         v-if="store.selectedCategory"
         class="clear-btn"
+        type="button"
+        :aria-label="t('sidebar.clearFilter')"
         @click="store.selectCategory(null)"
+        @keydown="handleClearKeydown"
       >
-        清除筛选
+        {{ t('sidebar.clearFilter') }}
       </button>
-    </div>
+    </header>
 
-    <div class="category-list">
+    <div
+      class="category-list"
+      role="listbox"
+      :aria-label="sidebarTitle"
+      tabindex="-1"
+    >
       <button
         v-for="category in store.currentCategoryList"
         :key="category.id"
         class="category-item"
         :class="{ active: store.selectedCategory === category.id }"
+        :aria-label="getCategoryAriaLabel(category, store.selectedCategory === category.id)"
+        :aria-selected="store.selectedCategory === category.id"
+        role="option"
+        tabindex="0"
+        type="button"
         @click="handleCategoryClick(category.id)"
+        @keydown="handleCategoryKeydown($event, category.id)"
       >
-        <span class="category-name">{{ category.name }}</span>
-        <span class="category-count">{{ category.count }}</span>
+        <span class="category-name">{{ translateCategoryName(category.name) }}</span>
+        <span class="category-count" aria-hidden="true">{{ category.count }}</span>
+        <span class="sr-only">{{ t('sidebar.itemCount', { count: category.count }) }}</span>
       </button>
     </div>
 
-    <div class="sidebar-footer">
-      <p class="total-text">
-        共 <span class="total-num">{{ store.totalCount }}</span> 种零件
+    <footer class="sidebar-footer">
+      <p class="total-text" :aria-label="t('sidebar.totalAria', { count: store.totalCount })">
+        {{ t('sidebar.totalPrefix') }}
+        <span class="total-num">{{ store.totalCount }}</span>
+        {{ t('sidebar.totalSuffix') }}
       </p>
-    </div>
+    </footer>
   </aside>
 </template>
 
 <style scoped>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .category-sidebar {
   width: 240px;
   flex-shrink: 0;
@@ -87,7 +174,7 @@ function handleCategoryClick(categoryId: string) {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 16px;
   font-weight: 700;
-  color: #5C4033;
+  color: #1A1410;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -104,7 +191,7 @@ function handleCategoryClick(categoryId: string) {
   border: 1px solid #A68B3D;
   border-radius: 6px;
   background: transparent;
-  color: #8B4513;
+  color: #6B3410;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: 'Microsoft YaHei', sans-serif;
@@ -113,6 +200,12 @@ function handleCategoryClick(categoryId: string) {
 .clear-btn:hover {
   background: #C4A35A;
   color: #F9F5ED;
+}
+
+.clear-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.6);
+  background: #F5F0E8;
 }
 
 .category-list {
@@ -146,7 +239,7 @@ function handleCategoryClick(categoryId: string) {
   border: 1px solid transparent;
   border-radius: 8px;
   background: transparent;
-  color: #5C4033;
+  color: #3E2A20;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -156,9 +249,15 @@ function handleCategoryClick(categoryId: string) {
 }
 
 .category-item:hover {
-  background: rgba(196, 163, 90, 0.15);
+  background: rgba(196, 163, 90, 0.18);
   border-color: rgba(196, 163, 90, 0.5);
   padding-left: 18px;
+}
+
+.category-item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.6);
+  background: rgba(196, 163, 90, 0.12);
 }
 
 .category-item.active {
@@ -166,6 +265,10 @@ function handleCategoryClick(categoryId: string) {
   color: #F5F0E8;
   border-color: #5C4033;
   box-shadow: 0 2px 10px rgba(92, 64, 51, 0.2);
+}
+
+.category-item.active:focus-visible {
+  box-shadow: 0 2px 10px rgba(92, 64, 51, 0.2), 0 0 0 2px rgba(196, 163, 90, 0.7);
 }
 
 .category-item.active .category-count {
@@ -181,8 +284,8 @@ function handleCategoryClick(categoryId: string) {
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 10px;
-  background: rgba(196, 163, 90, 0.3);
-  color: #8B4513;
+  background: rgba(196, 163, 90, 0.32);
+  color: #6B3410;
   font-weight: 600;
   min-width: 28px;
   text-align: center;
@@ -195,7 +298,7 @@ function handleCategoryClick(categoryId: string) {
 
 .total-text {
   font-size: 13px;
-  color: #7A5A47;
+  color: #5C4033;
   text-align: center;
   margin: 0;
   font-family: 'Microsoft YaHei', sans-serif;
@@ -204,7 +307,7 @@ function handleCategoryClick(categoryId: string) {
 .total-num {
   font-size: 18px;
   font-weight: 700;
-  color: #8B4513;
+  color: #6B3410;
   font-family: 'SimSun', serif;
 }
 
@@ -231,6 +334,7 @@ function handleCategoryClick(categoryId: string) {
   .category-item {
     padding: 8px 12px;
     font-size: 13px;
+    width: auto;
   }
 
   .category-item:hover {

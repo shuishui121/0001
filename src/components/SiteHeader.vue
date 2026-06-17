@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { usePartsStore } from '@/stores/parts'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const router = useRouter()
 const store = usePartsStore()
+const { t } = useI18n()
 
 const searchInput = computed({
   get: () => store.searchQuery,
@@ -24,36 +27,67 @@ function goHome() {
 </script>
 
 <template>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="header-inner">
-      <div class="logo-section" @click="goHome">
-        <div class="logo-icon">🏛️</div>
+      <a
+        href="#"
+        class="logo-section"
+        role="link"
+        :aria-label="t('header.title') + ' - ' + t('header.subtitle')"
+        @click.prevent="goHome"
+      >
+        <div class="logo-icon" aria-hidden="true">🏛️</div>
         <div class="logo-text">
-          <h1 class="site-title">滕州墨家文化展览馆</h1>
-          <p class="site-subtitle">机关零件图鉴</p>
+          <h1 class="site-title">{{ t('header.title') }}</h1>
+          <p class="site-subtitle">{{ t('header.subtitle') }}</p>
         </div>
-      </div>
+      </a>
 
-      <div class="search-section">
-        <div class="search-box">
-          <input
-            v-model="searchInput"
-            type="text"
-            placeholder="搜索零件名称、编号..."
-            class="search-input"
-          />
-          <div class="search-btn">
-            🔍
-          </div>
+      <div class="header-actions">
+        <div class="search-section">
+          <form class="search-box" role="search" @submit.prevent>
+            <label for="part-search" class="sr-only">{{ t('common.search') }}</label>
+            <input
+              id="part-search"
+              v-model="searchInput"
+              type="search"
+              :placeholder="t('common.search')"
+              class="search-input"
+              :aria-label="t('common.search')"
+              autocomplete="off"
+            />
+            <button
+              type="submit"
+              class="search-btn"
+              :aria-label="t('common.searchBtn')"
+              @click="() => {}"
+            >
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </form>
         </div>
+
+        <LanguageSwitcher />
       </div>
     </div>
 
-    <div class="header-decoration"></div>
+    <div class="header-decoration" aria-hidden="true"></div>
   </header>
 </template>
 
 <style scoped>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .site-header {
   background: linear-gradient(180deg, #5C4033 0%, #3E2A20 100%);
   color: #F5F0E8;
@@ -78,10 +112,20 @@ function goHome() {
   gap: 16px;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: -4px -8px;
 }
 
 .logo-section:hover {
   opacity: 0.9;
+}
+
+.logo-section:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.5);
 }
 
 .logo-icon {
@@ -107,6 +151,13 @@ function goHome() {
   font-family: 'SimSun', serif;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
 .search-section {
   flex-shrink: 0;
 }
@@ -125,7 +176,7 @@ function goHome() {
 .search-box:focus-within {
   background: rgba(245, 240, 232, 0.15);
   border-color: #C4A35A;
-  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.2);
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.25);
 }
 
 .search-input {
@@ -136,10 +187,11 @@ function goHome() {
   font-size: 14px;
   width: 240px;
   font-family: 'Microsoft YaHei', sans-serif;
+  padding: 6px 0;
 }
 
 .search-input::placeholder {
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(245, 240, 232, 0.55);
 }
 
 .search-btn {
@@ -154,11 +206,18 @@ function goHome() {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  color: #F9F5ED;
+  flex-shrink: 0;
 }
 
 .search-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(196, 163, 90, 0.4);
+}
+
+.search-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 240, 232, 0.4), 0 4px 12px rgba(196, 163, 90, 0.4);
 }
 
 .header-decoration {
@@ -195,6 +254,12 @@ function goHome() {
     flex-direction: column;
     gap: 14px;
     padding: 16px 20px;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .logo-section {

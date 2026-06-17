@@ -1,37 +1,68 @@
 <script setup lang="ts">
 import { onMounted, watch, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { usePartsStore } from '@/stores/parts'
 import DimensionTabs from '@/components/DimensionTabs.vue'
 import CategorySidebar from '@/components/CategorySidebar.vue'
 import PartCard from '@/components/PartCard.vue'
 import type { Part } from '@/types/part'
-import { DIMENSION_LABELS } from '@/types/part'
+import { useI18nPart } from '@/composables/useI18nPart'
 
 const store = usePartsStore()
 const route = useRoute()
 const router = useRouter()
+const { t } = useI18n()
+const { getTranslatedPart } = useI18nPart()
 
 const showSidebar = computed(() => store.currentCategoryList.length > 0)
 
 const currentFilterText = computed(() => {
-  const parts = store.filteredParts
-  const dim = DIMENSION_LABELS[store.currentDimension]
-  
+  const count = store.filteredParts.length
+  const dim = t(`dimensions.${store.currentDimension}`) as string
+
   if (store.selectedCategory) {
-    return `${dim}：${store.selectedCategory}（共 ${parts.length} 件）`
+    const nsMap: Record<string, string> = {
+      function: 'functions',
+      material: 'materials',
+      location: 'locations'
+    }
+    const ns = nsMap[store.currentDimension]
+    const categoryTranslated = t(`${ns}.${store.selectedCategory}`) as string
+    const categoryDisplay = (categoryTranslated && !categoryTranslated.startsWith(`${ns}.`))
+      ? categoryTranslated
+      : store.selectedCategory
+
+    return t('home.filterFormat', {
+      dimension: dim,
+      category: categoryDisplay,
+      count
+    })
   }
-  
+
   if (store.searchQuery) {
-    return `搜索："${store.searchQuery}"（共 ${parts.length} 件）`
+    return t('home.searchFormat', {
+      query: store.searchQuery,
+      count
+    })
   }
-  
-  return `全部零件（共 ${parts.length} 件）`
+
+  return t('home.allFormat', { count })
 })
+
+const translatedFilteredParts = computed(() => {
+  return store.filteredParts.map(part => getTranslatedPart(part))
+})
+
+function handleReset() {
+  store.selectCategory(null)
+  store.setSearchQuery('')
+  router.push({ path: '/', query: {} })
+}
 
 onMounted(() => {
   store.loadParts()
-  
+
   if (route.query.q) {
     store.setSearchQuery(String(route.query.q))
   }
@@ -52,34 +83,34 @@ function handlePartClick(part: Part) {
 
 <template>
   <div class="home-page">
-    <section class="hero-section">
+    <section class="hero-section" aria-labelledby="hero-heading">
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="badge-icon">⚙️</span>
-          <span class="badge-text">机关零件图鉴</span>
+          <span class="badge-icon" aria-hidden="true">⚙️</span>
+          <span class="badge-text">{{ t('home.badge') }}</span>
         </div>
-        <h2 class="hero-title">探索墨家机关之美</h2>
+        <h2 id="hero-heading" class="hero-title">{{ t('home.heroTitle') }}</h2>
         <p class="hero-desc">
-          汇集战国墓群出土的两百余种墨家机关零件，
+          {{ t('home.heroDesc1') }}
           <br />
-          按功用、材质、出土地点三种维度分类浏览
+          {{ t('home.heroDesc2') }}
         </p>
       </div>
-      <div class="hero-decoration">
+      <div class="hero-decoration" aria-hidden="true">
         <div class="deco-circle circle-1"></div>
         <div class="deco-circle circle-2"></div>
         <div class="deco-pattern"></div>
       </div>
     </section>
 
-    <section class="main-content">
+    <section class="main-content" aria-label="零件浏览区域">
       <div class="content-inner">
-        <div class="dimension-section">
+        <div class="dimension-section" aria-labelledby="browse-heading">
           <div class="section-header">
-            <h3 class="section-title">
-              <span class="title-line"></span>
-              分类浏览
-              <span class="title-line"></span>
+            <h3 id="browse-heading" class="section-title">
+              <span class="title-line" aria-hidden="true"></span>
+              {{ t('home.browseByCategory') }}
+              <span class="title-line" aria-hidden="true"></span>
             </h3>
           </div>
           <DimensionTabs />
@@ -88,38 +119,46 @@ function handlePartClick(part: Part) {
         <div class="content-body" :class="{ 'no-sidebar': !showSidebar }">
           <CategorySidebar v-if="showSidebar" class="sidebar-panel" />
 
-          <div class="parts-section">
+          <div class="parts-section" aria-live="polite">
             <div class="parts-header">
-              <div class="filter-info">
-                <span class="filter-icon">📋</span>
+              <div class="filter-info" role="status">
+                <span class="filter-icon" aria-hidden="true">📋</span>
                 <span class="filter-text">{{ currentFilterText }}</span>
               </div>
             </div>
 
             <div class="parts-content">
-              <div v-if="store.isLoading" class="content-panel loading-state">
-                <div class="loading-spinner"></div>
-                <p class="loading-text">正在加载零件数据...</p>
+              <div v-if="store.isLoading" class="content-panel loading-state" role="status" aria-live="polite">
+                <div class="loading-spinner" aria-hidden="true"></div>
+                <p class="loading-text">{{ t('common.loading') }}</p>
               </div>
 
               <div v-else-if="store.filteredParts.length === 0" class="content-panel empty-state">
-                <div class="empty-icon">🔍</div>
-                <p class="empty-title">未找到匹配的零件</p>
-                <p class="empty-desc">试试其他分类或关键词</p>
-                <button 
+                <div class="empty-icon" aria-hidden="true">🔍</div>
+                <h3 class="empty-title">{{ t('home.noResults') }}</h3>
+                <p class="empty-desc">{{ t('home.tryOther') }}</p>
+                <button
                   class="reset-btn"
-                  @click="() => { store.selectCategory(null); store.setSearchQuery('') }"
+                  type="button"
+                  :aria-label="t('common.reset')"
+                  @click="handleReset"
                 >
-                  重置筛选
+                  {{ t('common.reset') }}
                 </button>
               </div>
 
-              <div v-else class="content-panel parts-grid">
+              <div
+                v-else
+                class="content-panel parts-grid"
+                role="list"
+                :aria-label="t('home.allParts')"
+              >
                 <PartCard
-                  v-for="(part, index) in store.filteredParts"
+                  v-for="(part, index) in translatedFilteredParts"
                   :key="part.id"
                   :part="part"
                   :index="index"
+                  role="listitem"
                   @click="handlePartClick"
                 />
               </div>
@@ -183,12 +222,13 @@ function handlePartClick(part: Part) {
   margin: 0 0 16px 0;
   letter-spacing: 6px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #F5F0E8;
 }
 
 .hero-desc {
   font-size: 16px;
   line-height: 2;
-  color: rgba(245, 240, 232, 0.85);
+  color: rgba(245, 240, 232, 0.92);
   margin: 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -306,8 +346,8 @@ function handlePartClick(part: Part) {
   align-items: center;
   gap: 8px;
   padding: 12px 16px;
-  background: rgba(196, 163, 90, 0.1);
-  border-left: 3px solid #C4A35A;
+  background: rgba(196, 163, 90, 0.12);
+  border-left: 3px solid #A68B3D;
   border-radius: 0 8px 8px 0;
 }
 
@@ -317,7 +357,7 @@ function handlePartClick(part: Part) {
 
 .filter-text {
   font-size: 14px;
-  color: #5C4033;
+  color: #3E2A20;
   font-weight: 500;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -362,7 +402,7 @@ function handlePartClick(part: Part) {
   width: 48px;
   height: 48px;
   border: 3px solid #E8DFD0;
-  border-top-color: #C4A35A;
+  border-top-color: #A68B3D;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;
@@ -374,7 +414,7 @@ function handlePartClick(part: Part) {
 
 .loading-text {
   font-size: 14px;
-  color: #7A5A47;
+  color: #5C4033;
   margin: 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -387,14 +427,14 @@ function handlePartClick(part: Part) {
 .empty-title {
   font-size: 18px;
   font-weight: 600;
-  color: #5C4033;
+  color: #3E2A20;
   margin: 0 0 8px 0;
   font-family: 'SimSun', serif;
 }
 
 .empty-desc {
   font-size: 14px;
-  color: #7A5A47;
+  color: #5C4033;
   margin: 0 0 20px 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -415,6 +455,11 @@ function handlePartClick(part: Part) {
 .reset-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(196, 163, 90, 0.4);
+}
+
+.reset-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.5), 0 4px 12px rgba(196, 163, 90, 0.4);
 }
 
 .sidebar-panel {

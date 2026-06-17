@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { usePartsStore } from '@/stores/parts'
 import AssemblyViewer from '@/components/AssemblyViewer.vue'
 import PartSketch from '@/components/PartSketch.vue'
 import { ArrowLeft, Tag, Layers, MapPin, Ruler, Weight } from 'lucide-vue-next'
+import { useI18nPart } from '@/composables/useI18nPart'
 
 const route = useRoute()
 const router = useRouter()
 const store = usePartsStore()
+const { t, locale } = useI18n()
+const { getTranslatedPart } = useI18nPart()
 
 const imageZoom = ref(1)
 const isLoading = ref(true)
@@ -16,26 +20,35 @@ const sketchImageError = ref(false)
 
 const partId = computed(() => route.params.id as string)
 
-const part = computed(() => {
+const originalPart = computed(() => {
   return store.getPartById(partId.value)
+})
+
+const part = computed(() => {
+  if (!originalPart.value) return undefined
+  return getTranslatedPart(originalPart.value)
 })
 
 const dimensionText = computed(() => {
   if (!part.value) return ''
   const dims = part.value.dimensions
   const parts: string[] = []
-  
-  if (dims.length) parts.push(`长 ${dims.length}${dims.unit}`)
-  if (dims.width) parts.push(`宽 ${dims.width}${dims.unit}`)
-  if (dims.height) parts.push(`高 ${dims.height}${dims.unit}`)
-  if (dims.diameter) parts.push(`直径 ${dims.diameter}${dims.unit}`)
-  
+
+  if (dims.length) parts.push(`${t('detail.lengthLabel')} ${dims.length}${dims.unit}`)
+  if (dims.width) parts.push(`${t('detail.widthLabel')} ${dims.width}${dims.unit}`)
+  if (dims.height) parts.push(`${t('detail.heightLabel')} ${dims.height}${dims.unit}`)
+  if (dims.diameter) parts.push(`${t('detail.diameterLabel')} ${dims.diameter}${dims.unit}`)
+
   return parts.join(' × ')
 })
 
 const weightText = computed(() => {
   if (!part.value?.dimensions.weight) return ''
-  return `重 ${part.value.dimensions.weight} kg`
+  return `${t('detail.weightFormat', { value: part.value.dimensions.weight })}`
+})
+
+const pageTitle = computed(() => {
+  return part.value ? `${part.value.name} - ${t('header.title')}` : t('header.title')
 })
 
 function goBack() {
@@ -64,7 +77,7 @@ onMounted(() => {
   }
 })
 
-watch(partId, () => {
+watch([partId, locale], () => {
   imageZoom.value = 1
   sketchImageError.value = false
 })
@@ -73,54 +86,97 @@ watch(partId, () => {
 <template>
   <div class="part-detail-page">
     <div class="detail-container">
-      <div class="detail-header">
-        <button class="back-btn" @click="goBack">
-          <ArrowLeft :size="20" />
-          <span>返回列表</span>
+      <header class="detail-header">
+        <button
+          class="back-btn"
+          type="button"
+          :aria-label="t('common.back')"
+          @click="goBack"
+        >
+          <ArrowLeft :size="20" aria-hidden="true" />
+          <span>{{ t('common.back') }}</span>
         </button>
 
-        <nav class="breadcrumb">
-          <span class="crumb" @click="router.push('/')">零件图鉴</span>
-          <span class="separator">/</span>
-          <span class="crumb current">{{ part?.name || '零件详情' }}</span>
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <ol>
+            <li>
+              <a
+                class="crumb"
+                href="#"
+                @click.prevent="router.push('/')"
+                :aria-label="t('detail.breadcrumb')"
+              >
+                {{ t('detail.breadcrumb') }}
+              </a>
+            </li>
+            <li class="separator" aria-hidden="true">{{ t('detail.breadcrumbSeparator') }}</li>
+            <li>
+              <span class="crumb current" aria-current="page">
+                {{ part?.name || t('detail.notFound') }}
+              </span>
+            </li>
+          </ol>
         </nav>
-      </div>
+      </header>
 
       <div class="detail-panels">
-        <div v-if="isLoading" class="content-panel loading-wrap">
-          <div class="loading-spinner"></div>
-          <p class="loading-text">正在加载零件详情...</p>
-        </div>
+        <section v-if="isLoading" class="content-panel loading-wrap" aria-live="polite">
+          <div class="loading-spinner" aria-hidden="true"></div>
+          <p class="loading-text">{{ t('common.loadingDetail') }}</p>
+        </section>
 
-        <div v-else-if="!part" class="content-panel not-found">
-          <div class="notfound-icon">❓</div>
-          <h2 class="notfound-title">未找到该零件</h2>
-          <p class="notfound-desc">可能该零件已被移除或编号有误</p>
-          <button class="back-home-btn" @click="router.push('/')">
-            返回首页
+        <section v-else-if="!part" class="content-panel not-found">
+          <div class="notfound-icon" aria-hidden="true">❓</div>
+          <h2 class="notfound-title">{{ t('detail.notFound') }}</h2>
+          <p class="notfound-desc">{{ t('detail.notFoundDesc') }}</p>
+          <button
+            class="back-home-btn"
+            type="button"
+            :aria-label="t('common.home')"
+            @click="router.push('/')"
+          >
+            {{ t('common.home') }}
           </button>
-        </div>
+        </section>
 
-        <div v-else class="content-panel detail-content">
-          <div class="sketch-section">
-            <div class="sketch-header">
-              <h2 class="section-title">
-                <span class="title-icon">📐</span>
-                线稿图
+        <article v-else class="content-panel detail-content" :aria-label="part.name">
+          <section class="sketch-section" aria-labelledby="sketch-heading">
+            <header class="sketch-header">
+              <h2 id="sketch-heading" class="section-title">
+                <span class="title-icon" aria-hidden="true">📐</span>
+                {{ t('detail.sketch') }}
               </h2>
-              <div class="zoom-controls">
-                <button class="zoom-btn" @click="zoomOut" title="缩小">−</button>
-                <span class="zoom-level">{{ Math.round(imageZoom * 100) }}%</span>
-                <button class="zoom-btn" @click="zoomIn" title="放大">+</button>
-                <button class="reset-btn" @click="resetZoom" title="重置">↺</button>
+              <div class="zoom-controls" role="group" :aria-label="t('detail.sketch')">
+                <button
+                  class="zoom-btn"
+                  type="button"
+                  :aria-label="t('detail.zoomOut')"
+                  :title="t('detail.zoomOut')"
+                  @click="zoomOut"
+                >−</button>
+                <span class="zoom-level" aria-live="polite">{{ Math.round(imageZoom * 100) }}%</span>
+                <button
+                  class="zoom-btn"
+                  type="button"
+                  :aria-label="t('detail.zoomIn')"
+                  :title="t('detail.zoomIn')"
+                  @click="zoomIn"
+                >+</button>
+                <button
+                  class="reset-btn"
+                  type="button"
+                  :aria-label="t('detail.resetZoom')"
+                  :title="t('detail.resetZoom')"
+                  @click="resetZoom"
+                >↺</button>
               </div>
-            </div>
-            
-            <div class="sketch-wrapper">
+            </header>
+
+            <figure class="sketch-wrapper">
               <div class="sketch-container">
                 <template v-if="!sketchImageError && part.sketchImage">
-                  <img 
-                    :src="part.sketchImage" 
+                  <img
+                    :src="part.sketchImage"
                     :alt="part.name"
                     :style="{ transform: `scale(${imageZoom})` }"
                     class="sketch-image"
@@ -131,23 +187,23 @@ watch(partId, () => {
                   <PartSketch :part="part" size="large" />
                 </div>
               </div>
-              
-              <div class="dimension-labels">
+
+              <figcaption class="dimension-labels" aria-hidden="true">
                 <div v-if="dimensionText" class="dim-label dim-horizontal">
-                  <Ruler :size="16" />
+                  <Ruler :size="16" aria-hidden="true" />
                   <span>{{ dimensionText }}</span>
                 </div>
                 <div v-if="weightText" class="dim-label dim-vertical">
-                  <Weight :size="16" />
+                  <Weight :size="16" aria-hidden="true" />
                   <span>{{ weightText }}</span>
                 </div>
-              </div>
-            </div>
-          </div>
+              </figcaption>
+            </figure>
+          </section>
 
-          <div class="info-section">
+          <section class="info-section" aria-labelledby="info-heading">
             <div class="part-main-info">
-              <h1 class="part-name">{{ part.name }}</h1>
+              <h1 id="info-heading" class="part-name">{{ part.name }}</h1>
               <div class="part-code">{{ part.code }}</div>
             </div>
 
@@ -155,85 +211,85 @@ watch(partId, () => {
               <p>{{ part.description }}</p>
             </div>
 
-            <div class="info-grid">
+            <dl class="info-grid" aria-label="零件属性">
               <div class="info-item">
-                <div class="info-icon">
+                <dt class="info-icon" aria-hidden="true">
                   <Tag :size="18" />
-                </div>
-                <div class="info-content">
-                  <div class="info-label">功用</div>
+                </dt>
+                <dd class="info-content">
+                  <div class="info-label">{{ t('detail.function') }}</div>
                   <div class="info-value">{{ part.function }}</div>
-                </div>
+                </dd>
               </div>
 
               <div class="info-item">
-                <div class="info-icon">
+                <dt class="info-icon" aria-hidden="true">
                   <Layers :size="18" />
-                </div>
-                <div class="info-content">
-                  <div class="info-label">材质</div>
+                </dt>
+                <dd class="info-content">
+                  <div class="info-label">{{ t('detail.material') }}</div>
                   <div class="info-value">{{ part.material }}</div>
-                </div>
+                </dd>
               </div>
 
               <div class="info-item">
-                <div class="info-icon">
+                <dt class="info-icon" aria-hidden="true">
                   <MapPin :size="18" />
-                </div>
-                <div class="info-content">
-                  <div class="info-label">出土地点</div>
+                </dt>
+                <dd class="info-content">
+                  <div class="info-label">{{ t('detail.location') }}</div>
                   <div class="info-value">{{ part.location }}</div>
-                </div>
+                </dd>
               </div>
 
               <div v-if="part.era" class="info-item">
-                <div class="info-icon">📜</div>
-                <div class="info-content">
-                  <div class="info-label">年代</div>
+                <dt class="info-icon" aria-hidden="true">📜</dt>
+                <dd class="info-content">
+                  <div class="info-label">{{ t('detail.era') }}</div>
                   <div class="info-value">{{ part.era }}</div>
-                </div>
+                </dd>
               </div>
 
               <div v-if="part.condition" class="info-item">
-                <div class="info-icon">🔍</div>
-                <div class="info-content">
-                  <div class="info-label">保存状态</div>
+                <dt class="info-icon" aria-hidden="true">🔍</dt>
+                <dd class="info-content">
+                  <div class="info-label">{{ t('detail.condition') }}</div>
                   <div class="info-value">{{ part.condition }}</div>
-                </div>
+                </dd>
               </div>
-            </div>
+            </dl>
 
-            <div class="size-section">
-              <h3 class="subsection-title">尺寸参数</h3>
-              <div class="size-grid">
+            <section class="size-section" aria-labelledby="size-heading">
+              <h3 id="size-heading" class="subsection-title">{{ t('detail.dimensions') }}</h3>
+              <dl class="size-grid">
                 <div v-if="part.dimensions.length" class="size-item">
-                  <span class="size-label">长度</span>
-                  <span class="size-value">{{ part.dimensions.length }} {{ part.dimensions.unit }}</span>
+                  <dt class="size-label">{{ t('detail.length') }}</dt>
+                  <dd class="size-value">{{ part.dimensions.length }} {{ part.dimensions.unit }}</dd>
                 </div>
                 <div v-if="part.dimensions.width" class="size-item">
-                  <span class="size-label">宽度</span>
-                  <span class="size-value">{{ part.dimensions.width }} {{ part.dimensions.unit }}</span>
+                  <dt class="size-label">{{ t('detail.width') }}</dt>
+                  <dd class="size-value">{{ part.dimensions.width }} {{ part.dimensions.unit }}</dd>
                 </div>
                 <div v-if="part.dimensions.height" class="size-item">
-                  <span class="size-label">高度</span>
-                  <span class="size-value">{{ part.dimensions.height }} {{ part.dimensions.unit }}</span>
+                  <dt class="size-label">{{ t('detail.height') }}</dt>
+                  <dd class="size-value">{{ part.dimensions.height }} {{ part.dimensions.unit }}</dd>
                 </div>
                 <div v-if="part.dimensions.diameter" class="size-item">
-                  <span class="size-label">直径</span>
-                  <span class="size-value">{{ part.dimensions.diameter }} {{ part.dimensions.unit }}</span>
+                  <dt class="size-label">{{ t('detail.diameter') }}</dt>
+                  <dd class="size-value">{{ part.dimensions.diameter }} {{ part.dimensions.unit }}</dd>
                 </div>
                 <div v-if="part.dimensions.weight" class="size-item">
-                  <span class="size-label">重量</span>
-                  <span class="size-value">{{ part.dimensions.weight }} kg</span>
+                  <dt class="size-label">{{ t('detail.weight') }}</dt>
+                  <dd class="size-value">{{ part.dimensions.weight }} kg</dd>
                 </div>
-              </div>
-            </div>
-          </div>
+              </dl>
+            </section>
+          </section>
 
-          <div class="assembly-section">
+          <section class="assembly-section" aria-labelledby="assembly-heading">
             <AssemblyViewer :assemblies="part.assemblies" />
-          </div>
-        </div>
+          </section>
+        </article>
       </div>
     </div>
   </div>
@@ -256,6 +312,8 @@ watch(partId, () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .back-btn {
@@ -266,7 +324,7 @@ watch(partId, () => {
   background: #F9F5ED;
   border: 2px solid #C4A35A;
   border-radius: 8px;
-  color: #5C4033;
+  color: #3E2A20;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -281,32 +339,47 @@ watch(partId, () => {
   box-shadow: 0 4px 12px rgba(92, 64, 51, 0.15);
 }
 
-.breadcrumb {
+.back-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.5), 0 4px 12px rgba(92, 64, 51, 0.15);
+}
+
+.breadcrumb ol {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 13px;
   font-family: 'Microsoft YaHei', sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .crumb {
-  color: #7A5A47;
+  color: #5C4033;
   cursor: pointer;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .crumb:hover {
-  color: #5C4033;
+  color: #3E2A20;
+}
+
+.crumb:focus-visible {
+  outline: 2px solid #C4A35A;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .crumb.current {
-  color: #3E2A20;
+  color: #1A1410;
   font-weight: 600;
   cursor: default;
 }
 
 .separator {
-  color: #C4A35A;
+  color: #A68B3D;
 }
 
 .detail-panels {
@@ -337,13 +410,16 @@ watch(partId, () => {
   justify-content: center;
   padding: 80px 20px;
   text-align: center;
+  background: #F9F5ED;
+  border: 2px solid #C4A35A;
+  border-radius: 12px;
 }
 
 .loading-spinner {
   width: 48px;
   height: 48px;
   border: 3px solid #E8DFD0;
-  border-top-color: #C4A35A;
+  border-top-color: #A68B3D;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;
@@ -355,7 +431,7 @@ watch(partId, () => {
 
 .loading-text {
   font-size: 14px;
-  color: #7A5A47;
+  color: #5C4033;
   margin: 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -368,13 +444,13 @@ watch(partId, () => {
 .notfound-title {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 24px;
-  color: #3E2A20;
+  color: #1A1410;
   margin: 0 0 10px 0;
 }
 
 .notfound-desc {
   font-size: 14px;
-  color: #7A5A47;
+  color: #5C4033;
   margin: 0 0 24px 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -397,11 +473,20 @@ watch(partId, () => {
   box-shadow: 0 6px 20px rgba(92, 64, 51, 0.3);
 }
 
+.back-home-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.5), 0 6px 20px rgba(92, 64, 51, 0.3);
+}
+
 .detail-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   animation: fadeIn 0.5s ease-out;
+  background: #F9F5ED;
+  border: 2px solid #C4A35A;
+  border-radius: 12px;
+  padding: 24px;
 }
 
 @keyframes fadeIn {
@@ -424,7 +509,7 @@ watch(partId, () => {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 18px;
   font-weight: 700;
-  color: #3E2A20;
+  color: #1A1410;
   margin: 0;
   display: flex;
   align-items: center;
@@ -446,7 +531,7 @@ watch(partId, () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #F9F5ED;
+  background: #F5F0E8;
   border: 1px solid #E8DFD0;
   border-radius: 20px;
   padding: 4px 8px;
@@ -459,7 +544,7 @@ watch(partId, () => {
   background: #E8DFD0;
   border-radius: 50%;
   font-size: 18px;
-  color: #5C4033;
+  color: #3E2A20;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -468,13 +553,20 @@ watch(partId, () => {
 }
 
 .zoom-btn:hover {
-  background: #C4A35A;
+  background: #A68B3D;
+  color: #F9F5ED;
+}
+
+.zoom-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.7);
+  background: #A68B3D;
   color: #F9F5ED;
 }
 
 .zoom-level {
   font-size: 12px;
-  color: #7A5A47;
+  color: #5C4033;
   min-width: 48px;
   text-align: center;
   font-family: 'Consolas', monospace;
@@ -487,7 +579,7 @@ watch(partId, () => {
   background: transparent;
   border-radius: 50%;
   font-size: 16px;
-  color: #7A5A47;
+  color: #5C4033;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -497,12 +589,18 @@ watch(partId, () => {
 
 .reset-btn:hover {
   background: #E8DFD0;
-  color: #5C4033;
+  color: #3E2A20;
+}
+
+.reset-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.7);
+  background: #E8DFD0;
 }
 
 .sketch-wrapper {
   position: relative;
-  background: #F9F5ED;
+  background: #F5F0E8;
   border: 2px solid #C4A35A;
   border-radius: 12px;
   padding: 20px;
@@ -511,6 +609,7 @@ watch(partId, () => {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0;
 }
 
 .sketch-container {
@@ -555,7 +654,7 @@ watch(partId, () => {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: rgba(92, 64, 51, 0.9);
+  background: rgba(62, 42, 32, 0.92);
   color: #F5F0E8;
   font-size: 12px;
   border-radius: 6px;
@@ -590,14 +689,14 @@ watch(partId, () => {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 28px;
   font-weight: 700;
-  color: #3E2A20;
+  color: #1A1410;
   margin: 0 0 8px 0;
   letter-spacing: 2px;
 }
 
 .part-code {
   font-size: 14px;
-  color: #8B4513;
+  color: #6B3410;
   font-family: 'Consolas', monospace;
   letter-spacing: 1px;
 }
@@ -609,7 +708,7 @@ watch(partId, () => {
 .part-description p {
   font-size: 14px;
   line-height: 2;
-  color: #5C4033;
+  color: #3E2A20;
   margin: 0;
   text-align: justify;
   font-family: 'Microsoft YaHei', sans-serif;
@@ -627,7 +726,7 @@ watch(partId, () => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #F9F5ED;
+  background: #F5F0E8;
   border: 1px solid #E8DFD0;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -644,16 +743,21 @@ watch(partId, () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(196, 163, 90, 0.2);
+  background: rgba(196, 163, 90, 0.22);
   border-radius: 8px;
-  color: #8B4513;
+  color: #6B3410;
   flex-shrink: 0;
   font-size: 18px;
+  margin: 0;
+}
+
+.info-content {
+  min-width: 0;
 }
 
 .info-label {
   font-size: 12px;
-  color: #7A5A47;
+  color: #5C4033;
   margin-bottom: 2px;
   font-family: 'Microsoft YaHei', sans-serif;
 }
@@ -661,12 +765,13 @@ watch(partId, () => {
 .info-value {
   font-size: 14px;
   font-weight: 600;
-  color: #3E2A20;
+  color: #1A1410;
   font-family: 'SimSun', serif;
+  margin: 0;
 }
 
 .size-section {
-  background: #F9F5ED;
+  background: #F5F0E8;
   border: 1px solid #E8DFD0;
   border-radius: 8px;
   padding: 16px;
@@ -676,7 +781,7 @@ watch(partId, () => {
   font-family: 'SimSun', 'STSong', serif;
   font-size: 15px;
   font-weight: 700;
-  color: #3E2A20;
+  color: #1A1410;
   margin: 0 0 12px 0;
   padding-bottom: 8px;
   border-bottom: 1px dashed #C4A35A;
@@ -693,21 +798,23 @@ watch(partId, () => {
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: #F5F0E8;
+  background: #F9F5ED;
   border-radius: 6px;
 }
 
 .size-label {
   font-size: 13px;
-  color: #7A5A47;
+  color: #5C4033;
   font-family: 'Microsoft YaHei', sans-serif;
+  margin: 0;
 }
 
 .size-value {
   font-size: 14px;
   font-weight: 600;
-  color: #8B4513;
+  color: #6B3410;
   font-family: 'Consolas', monospace;
+  margin: 0;
 }
 
 .assembly-section {
