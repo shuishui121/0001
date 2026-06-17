@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <rect x="30" y="30" width="30" height="140" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <rect x="240" y="30" width="30" height="140" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <rect x="60" y="30" width="180" height="20" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <rect x="80" y="50" width="8" height="100" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <rect x="212" y="50" width="8" height="100" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <path d="M88 50 L120 75 L120 140 L88 150" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <path d="M212 50 L180 75 L180 140 L212 150" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <circle cx="150" cy="45" r="10" stroke="#5C4033" stroke-width="1.5" fill="#F9F5ED"/>
+  <text x="150" y="20" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">吊桥机关</text>
+</svg>

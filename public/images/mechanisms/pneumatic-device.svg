@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <rect x="60" y="60" width="80" height="100" rx="5" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <rect x="70" y="75" width="60" height="50" rx="3" stroke="#C4A35A" stroke-width="1.5" fill="#E8DFD0"/>
+  <path d="M100 75 L100 125" stroke="#5C4033" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="100" cy="100" r="12" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <rect x="140" y="90" width="50" height="20" rx="10" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+  <path d="M190 100 L220 100 L215 95 L220 100 L215 105" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+  <path d="M220 100 Q240 90 250 100 Q240 110 220 100" stroke="#C4A35A" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M230 90 Q250 85 260 95" stroke="#C4A35A" stroke-width="1" fill="none" opacity="0.4"/>
+  <rect x="75" y="135" width="50" height="15" rx="3" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <text x="150" y="35" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">气动机关</text>
+</svg>

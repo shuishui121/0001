@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
+  <circle cx="100" cy="100" r="60" stroke="#5C4033" stroke-width="2"/>
+  <circle cx="100" cy="100" r="20" stroke="#5C4033" stroke-width="2"/>
+  <g stroke="#5C4033" stroke-width="2">
+    <path d="M100 40 L100 25 L110 20 L90 20 L100 25"/>
+    <path d="M100 160 L100 175 L110 180 L90 180 L100 175"/>
+    <path d="M40 100 L25 100 L20 90 L20 110 L25 100"/>
+    <path d="M160 100 L175 100 L180 90 L180 110 L175 100"/>
+    <path d="M55 55 L45 45 L38 48 L48 58 L55 55"/>
+    <path d="M145 145 L155 155 L162 152 L152 142 L145 145"/>
+    <path d="M55 145 L45 155 L38 152 L48 142 L55 145"/>
+    <path d="M145 55 L155 45 L162 48 L152 58 L145 55"/>
+    <path d="M75 35 L72 28 L68 32 L72 38 L75 35"/>
+    <path d="M125 165 L128 172 L132 168 L128 162 L125 165"/>
+    <path d="M35 125 L28 128 L32 132 L38 128 L35 125"/>
+    <path d="M165 75 L172 72 L168 68 L162 72 L165 75"/>
+  </g>
+  <line x1="100" y1="80" x2="100" y2="120" stroke="#5C4033" stroke-width="1.5"/>
+  <line x1="80" y1="100" x2="120" y2="100" stroke="#5C4033" stroke-width="1.5"/>
+  <text x="100" y="190" text-anchor="middle" font-size="10" fill="#5C4033" font-family="serif">主齿轮</text>
+</svg>

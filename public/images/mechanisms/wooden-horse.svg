@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <ellipse cx="150" cy="100" rx="70" ry="35" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <path d="M220 90 L260 75 L265 95 L225 110" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <path d="M250 75 Q255 55 265 60 Q260 80 255 85" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <path d="M80 110 L50 130 L55 150 L90 135" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <path d="M120 135 L115 170 L130 175 L135 140" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <path d="M180 135 L175 170 L190 175 L195 140" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <circle cx="140" cy="100" r="10" stroke="#5C4033" stroke-width="1.5" fill="#F9F5ED"/>
+  <circle cx="170" cy="105" r="8" stroke="#5C4033" stroke-width="1.5" fill="#F9F5ED"/>
+  <text x="150" y="25" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">机关木马</text>
+</svg>

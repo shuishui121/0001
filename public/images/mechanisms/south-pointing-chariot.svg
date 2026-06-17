@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <rect x="60" y="80" width="180" height="80" rx="10" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <circle cx="90" cy="160" r="20" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <circle cx="210" cy="160" r="20" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <rect x="140" y="40" width="20" height="50" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+  <circle cx="150" cy="35" r="12" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+  <path d="M150 23 L155 35 L145 35 Z" stroke="#5C4033" stroke-width="1.5" fill="#8B4513"/>
+  <rect x="100" y="90" width="30" height="15" rx="3" stroke="#5C4033" stroke-width="1.5" fill="#E8DFD0"/>
+  <rect x="170" y="90" width="30" height="15" rx="3" stroke="#5C4033" stroke-width="1.5" fill="#E8DFD0"/>
+  <circle cx="150" cy="115" r="18" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <text x="150" y="20" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">自动导向车</text>
+</svg>

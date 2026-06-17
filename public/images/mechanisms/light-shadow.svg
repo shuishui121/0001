@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <rect x="70" y="50" width="60" height="100" rx="5" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <circle cx="100" cy="75" r="12" stroke="#C4A35A" stroke-width="1.5" fill="#F5F0E8"/>
+  <path d="M100 63 L100 87" stroke="#5C4033" stroke-width="1.5"/>
+  <path d="M88 75 L112 75" stroke="#5C4033" stroke-width="1.5"/>
+  <path d="M130 100 L200 70" stroke="#C4A35A" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M200 70 L220 60" stroke="#C4A35A" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <path d="M200 70 L210 85" stroke="#C4A35A" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <ellipse cx="230" cy="100" rx="25" ry="40" stroke="#5C4033" stroke-width="1.5" fill="#E8DFD0"/>
+  <circle cx="230" cy="100" r="10" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <text x="150" y="25" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">光影机关</text>
+</svg>

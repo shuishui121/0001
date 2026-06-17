@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
+  <rect x="40" y="80" width="120" height="40" rx="3" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <line x1="40" y1="100" x2="160" y2="100" stroke="#5C4033" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="60" cy="100" r="12" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <circle cx="60" cy="100" r="4" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+  <path d="M90 85 L130 85 L125 95 L95 95 Z" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <path d="M90 115 L130 115 L125 105 L95 105 Z" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <line x1="155" y1="75" x2="175" y2="60" stroke="#5C4033" stroke-width="1.5"/>
+  <text x="100" y="180" text-anchor="middle" font-size="9" fill="#5C4033" font-family="serif">连杆</text>
+</svg>

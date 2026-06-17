@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <ellipse cx="150" cy="100" rx="80" ry="30" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <path d="M70 100 Q30 60 20 90 Q25 110 60 105" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <path d="M230 100 Q270 60 280 90 Q275 110 240 105" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <path d="M150 130 Q155 150 160 160 Q150 155 145 160 Q150 145 150 130" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <circle cx="120" cy="95" r="8" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <line x1="100" y1="95" x2="112" y2="95" stroke="#5C4033" stroke-width="1"/>
+  <line x1="128" y1="95" x2="180" y2="95" stroke="#5C4033" stroke-width="1"/>
+  <path d="M180 95 L190 85 L185 95 L190 105 Z" stroke="#5C4033" stroke-width="1" fill="#5C4033"/>
+  <text x="150" y="30" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">木鸢飞行器</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <rect x="40" y="20" width="40" height="160" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <rect x="220" y="20" width="40" height="160" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <rect x="40" y="10" width="220" height="20" stroke="#5C4033" stroke-width="2" fill="#5C4033"/>
+  <path d="M80 30 L80 170 L110 170 L110 35" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <path d="M190 30 L190 170 L160 170 L160 35" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <rect x="115" y="50" width="70" height="80" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <circle cx="150" cy="90" r="12" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <path d="M100 60 L120 55" stroke="#C4A35A" stroke-width="1" stroke-dasharray="3,2"/>
+  <path d="M200 60 L180 55" stroke="#C4A35A" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="150" y="20" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">城门机关</text>
+</svg>

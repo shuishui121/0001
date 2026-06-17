@@ -1,0 +1,986 @@
+[
+  {
+    "id": "gear-001",
+    "name": "青铜主齿轮",
+    "code": "MJ-G-001",
+    "description": "墨家机关核心传动部件，采用青铜铸造，齿牙精密，用于传递动力和改变转速。是连弩车、木鸢等大型机关的核心动力传输零件。",
+    "function": "传动",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 12.5,
+      "thickness": 2.3,
+      "weight": 1.8,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/gear-001.svg",
+    "thumbnail": "/images/parts/gear-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 45, "y": 35 },
+        "description": "位于弩车中部动力舱，连接弓弦储能机构与击发装置"
+      },
+      {
+        "mechanismName": "木鸢飞行器",
+        "mechanismImage": "/images/mechanisms/wooden-kite.svg",
+        "position": { "x": 50, "y": 55 },
+        "description": "位于机身中部，驱动双翼扇动机构"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 40, "y": 45 },
+        "description": "位于马腹动力舱，为四肢运动提供动力传输"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "gear-002",
+    "name": "铜制从动齿轮",
+    "code": "MJ-G-002",
+    "description": "配合主齿轮使用的从动传动部件，齿数较多，用于减速增扭。常见于需要大扭矩输出的机关装置中。",
+    "function": "传动",
+    "material": "青铜",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "diameter": 8.2,
+      "thickness": 1.8,
+      "weight": 0.9,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/gear-002.svg",
+    "thumbnail": "/images/parts/gear-002-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 55, "y": 40 },
+        "description": "与主齿轮啮合，减速后驱动箭匣推送机构"
+      },
+      {
+        "mechanismName": "木鸢飞行器",
+        "mechanismImage": "/images/mechanisms/wooden-kite.svg",
+        "position": { "x": 45, "y": 60 },
+        "description": "辅助翼面调节机构的动力传输"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "spring-001",
+    "name": "扭力弹簧",
+    "code": "MJ-S-001",
+    "description": "采用高强度青铜丝盘绕而成，用于储存和释放弹性能量。是连弩击发、机关陷阱触发等装置的核心储能元件。",
+    "function": "储能",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 3.5,
+      "length": 6.8,
+      "weight": 0.25,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/spring-001.svg",
+    "thumbnail": "/images/parts/spring-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 70, "y": 30 },
+        "description": "位于弩机击发机构，提供击发弹力"
+      },
+      {
+        "mechanismName": "机关陷阱",
+        "mechanismImage": "/images/mechanisms/trap.svg",
+        "position": { "x": 50, "y": 45 },
+        "description": "触发机关的核心储能部件"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "轻微锈蚀"
+  },
+  {
+    "id": "lever-001",
+    "name": "木质省力杠杆",
+    "code": "MJ-L-001",
+    "description": "采用硬木雕刻而成，利用杠杆原理放大作用力。常用于城门机关、重型器械的操作装置中。",
+    "function": "省力",
+    "material": "硬木",
+    "location": "滕州三号墓",
+    "dimensions": {
+      "length": 45.0,
+      "width": 4.2,
+      "height": 3.5,
+      "weight": 0.6,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/lever-001.svg",
+    "thumbnail": "/images/parts/lever-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "城门机关",
+        "mechanismImage": "/images/mechanisms/city-gate.svg",
+        "position": { "x": 30, "y": 50 },
+        "description": "城门开启省力操作杆"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "pulley-001",
+    "name": "铜制滑轮组",
+    "code": "MJ-P-001",
+    "description": "定滑轮与动滑轮组合装置，用于提升重物。滑轮组支架采用青铜铸造，滑轮内嵌硬木衬套减少磨损。",
+    "function": "起重",
+    "material": "青铜",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "diameter": 5.6,
+      "thickness": 2.0,
+      "weight": 0.4,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/pulley-001.svg",
+    "thumbnail": "/images/parts/pulley-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "吊桥机关",
+        "mechanismImage": "/images/mechanisms/drawbridge.svg",
+        "position": { "x": 60, "y": 20 },
+        "description": "吊桥提升系统核心组件"
+      },
+      {
+        "mechanismName": "井中汲水器",
+        "mechanismImage": "/images/mechanisms/well-pulley.svg",
+        "position": { "x": 50, "y": 15 },
+        "description": "井口上方的省力汲水装置"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "bearing-001",
+    "name": "木轴铜套轴承",
+    "code": "MJ-B-001",
+    "description": "转轴支撑组件，内套青铜耐磨衬里，外套木质固定架。用于减少转轴摩擦，提高传动效率。",
+    "function": "支撑",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 4.2,
+      "length": 5.5,
+      "weight": 0.3,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/bearing-001.svg",
+    "thumbnail": "/images/parts/bearing-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 35, "y": 50 },
+        "description": "车轮与车身连接的转轴支撑"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 30, "y": 65 },
+        "description": "四肢关节转轴支撑"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "linkage-001",
+    "name": "曲柄连杆",
+    "code": "MJ-LK-001",
+    "description": "将旋转运动转化为往复运动的核心部件。采用硬木与铜销组合，连接处精密配合，活动自如。",
+    "function": "传动",
+    "material": "硬木",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "length": 18.5,
+      "width": 2.8,
+      "thickness": 1.5,
+      "weight": 0.15,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/linkage-001.svg",
+    "thumbnail": "/images/parts/linkage-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "木鸢飞行器",
+        "mechanismImage": "/images/mechanisms/wooden-kite.svg",
+        "position": { "x": 55, "y": 45 },
+        "description": "将齿轮转动转化为翅膀扇动"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 55, "y": 55 },
+        "description": "驱动前后腿交替运动"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "ratchet-001",
+    "name": "铜制棘轮机构",
+    "code": "MJ-R-001",
+    "description": "单向传动装置，只允许轴向一个方向转动，反向锁定。常用于绞车、弩机上弦等需要防止倒转的机构。",
+    "function": "制动",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 6.8,
+      "thickness": 1.2,
+      "weight": 0.35,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/ratchet-001.svg",
+    "thumbnail": "/images/parts/ratchet-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 65, "y": 45 },
+        "description": "弓弦上弦机构，防止倒转松弦"
+      },
+      {
+        "mechanismName": "吊桥机关",
+        "mechanismImage": "/images/mechanisms/drawbridge.svg",
+        "position": { "x": 40, "y": 30 },
+        "description": "吊桥提升锁定装置"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "完整"
+  },
+  {
+    "id": "hinge-001",
+    "name": "铜合页",
+    "code": "MJ-H-001",
+    "description": "门窗与机关盖板的连接铰链，采用青铜铸造，两片式结构，铜销贯穿。表面有简单的云纹装饰。",
+    "function": "连接",
+    "material": "青铜",
+    "location": "邹城墓群",
+    "dimensions": {
+      "length": 9.5,
+      "width": 3.2,
+      "thickness": 0.4,
+      "weight": 0.12,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/hinge-001.svg",
+    "thumbnail": "/images/parts/hinge-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "机关宝箱",
+        "mechanismImage": "/images/mechanisms/secret-box.svg",
+        "position": { "x": 25, "y": 30 },
+        "description": "箱盖与箱体连接合页"
+      },
+      {
+        "mechanismName": "城门机关",
+        "mechanismImage": "/images/mechanisms/city-gate.svg",
+        "position": { "x": 15, "y": 50 },
+        "description": "城门侧边转动连接"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "latch-001",
+    "name": "自动木闩",
+    "code": "MJ-LA-001",
+    "description": "利用重力和斜面原理的自动门闩，关门时自动弹出锁死。配合机关陷阱使用，可实现自动封锁。",
+    "function": "锁止",
+    "material": "硬木",
+    "location": "滕州三号墓",
+    "dimensions": {
+      "length": 15.0,
+      "width": 3.5,
+      "height": 4.0,
+      "weight": 0.2,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/latch-001.svg",
+    "thumbnail": "/images/parts/latch-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "机关陷阱",
+        "mechanismImage": "/images/mechanisms/trap.svg",
+        "position": { "x": 30, "y": 60 },
+        "description": "陷阱触发后自动锁死"
+      },
+      {
+        "mechanismName": "机关宝箱",
+        "mechanismImage": "/images/mechanisms/secret-box.svg",
+        "position": { "x": 70, "y": 40 },
+        "description": "宝箱自动锁定机构"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "cam-001",
+    "name": "铜制凸轮",
+    "code": "MJ-C-001",
+    "description": "不规则轮廓的铜制圆盘，转动时推动从动件做往复运动。用于控制机关的时序动作，是自动化机关的关键零件。",
+    "function": "控制",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 7.2,
+      "thickness": 1.8,
+      "weight": 0.5,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/cam-001.svg",
+    "thumbnail": "/images/parts/cam-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "木鸢飞行器",
+        "mechanismImage": "/images/mechanisms/wooden-kite.svg",
+        "position": { "x": 40, "y": 50 },
+        "description": "控制尾翼角度变化"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 50, "y": 50 },
+        "description": "控制头部摆动节奏"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "piston-001",
+    "name": "木质活塞",
+    "code": "MJ-PS-001",
+    "description": "气筒或水泵中的往复运动部件，采用致密硬木制作，外缠皮革密封。用于气动或水力机关中。",
+    "function": "动力",
+    "material": "硬木",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "diameter": 5.8,
+      "length": 12.5,
+      "weight": 0.3,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/piston-001.svg",
+    "thumbnail": "/images/parts/piston-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "气动机关",
+        "mechanismImage": "/images/mechanisms/pneumatic-device.svg",
+        "position": { "x": 50, "y": 40 },
+        "description": "核心气动动力部件"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "皮革残损"
+  },
+  {
+    "id": "bellcrank-001",
+    "name": "转向曲柄",
+    "code": "MJ-BC-001",
+    "description": "L形转向传动杆，用于改变力的传递方向90度。铜制关节，木杆连接，常见于复杂的传动系统中。",
+    "function": "传动",
+    "material": "青铜",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "armLength1": 8.5,
+      "armLength2": 6.2,
+      "thickness": 1.0,
+      "weight": 0.2,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/bellcrank-001.svg",
+    "thumbnail": "/images/parts/bellcrank-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 40, "y": 35 },
+        "description": "转向传动机构"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 45, "y": 60 },
+        "description": "腿部侧向运动传动"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "lockpin-001",
+    "name": "铜制插销",
+    "code": "MJ-LP-001",
+    "description": "可拆卸的定位销钉，用于快速组装和拆卸机关部件。头部有圆环便于插拔，表面光滑耐磨。",
+    "function": "连接",
+    "material": "青铜",
+    "location": "邹城墓群",
+    "dimensions": {
+      "diameter": 1.2,
+      "length": 8.0,
+      "weight": 0.08,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/lockpin-001.svg",
+    "thumbnail": "/images/parts/lockpin-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 25, "y": 55 },
+        "description": "弩臂固定销"
+      },
+      {
+        "mechanismName": "吊桥机关",
+        "mechanismImage": "/images/mechanisms/drawbridge.svg",
+        "position": { "x": 70, "y": 60 },
+        "description": "桥板连接销"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "scrollspring-001",
+    "name": "涡卷弹簧",
+    "code": "MJ-SS-001",
+    "description": "平面涡卷式储能弹簧，类似钟表发条。为精密机关提供持续而稳定的动力输出，是计时机关和自动装置的动力源。",
+    "function": "储能",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 4.5,
+      "thickness": 0.8,
+      "weight": 0.15,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/scrollspring-001.svg",
+    "thumbnail": "/images/parts/scrollspring-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "刻漏计时器",
+        "mechanismImage": "/images/mechanisms/water-clock.svg",
+        "position": { "x": 50, "y": 35 },
+        "description": "辅助动力源，保证匀速运动"
+      },
+      {
+        "mechanismName": "机关宝箱",
+        "mechanismImage": "/images/mechanisms/secret-box.svg",
+        "position": { "x": 50, "y": 50 },
+        "description": "机关开启的动力来源"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "完整"
+  },
+  {
+    "id": "bracket-001",
+    "name": "铜制托架",
+    "code": "MJ-BR-001",
+    "description": "承托固定部件的L形支架，青铜铸造，底部有安装孔。用于将机关部件固定在机架或外壳上。",
+    "function": "支撑",
+    "material": "青铜",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "height": 6.5,
+      "width": 5.0,
+      "thickness": 0.6,
+      "weight": 0.25,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/bracket-001.svg",
+    "thumbnail": "/images/parts/bracket-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 20, "y": 40 },
+        "description": "弩臂托架"
+      },
+      {
+        "mechanismName": "木鸢飞行器",
+        "mechanismImage": "/images/mechanisms/wooden-kite.svg",
+        "position": { "x": 35, "y": 35 },
+        "description": "机翼支撑托架"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "chain-001",
+    "name": "铜链传动",
+    "code": "MJ-CH-001",
+    "description": "由多个铜环相扣组成的传动链，配合链轮使用。用于远距离传递动力，比皮带传动更可靠。",
+    "function": "传动",
+    "material": "青铜",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "linkLength": 1.8,
+      "linkWidth": 1.2,
+      "totalLength": 45.0,
+      "weight": 0.6,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/chain-001.svg",
+    "thumbnail": "/images/parts/chain-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "井中汲水器",
+        "mechanismImage": "/images/mechanisms/well-pulley.svg",
+        "position": { "x": 45, "y": 55 },
+        "description": "提升水桶的传动链"
+      },
+      {
+        "mechanismName": "吊桥机关",
+        "mechanismImage": "/images/mechanisms/drawbridge.svg",
+        "position": { "x": 55, "y": 25 },
+        "description": "吊桥提拉传动链"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "部分锈蚀"
+  },
+  {
+    "id": "valve-001",
+    "name": "单向阀门",
+    "code": "MJ-V-001",
+    "description": "水力或气力系统中的单向导通阀门，采用皮革阀片和铜制阀体。只允许流体单向通过，是泵类机关的核心部件。",
+    "function": "控制",
+    "material": "青铜",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "diameter": 3.2,
+      "length": 4.5,
+      "weight": 0.1,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/valve-001.svg",
+    "thumbnail": "/images/parts/valve-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "气动机关",
+        "mechanismImage": "/images/mechanisms/pneumatic-device.svg",
+        "position": { "x": 60, "y": 50 },
+        "description": "气路单向控制"
+      },
+      {
+        "mechanismName": "水井机械",
+        "mechanismImage": "/images/mechanisms/well-pulley.svg",
+        "position": { "x": 55, "y": 70 },
+        "description": "水泵单向进水阀"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "皮革残损"
+  },
+  {
+    "id": "flywheel-001",
+    "name": "铜制飞轮",
+    "code": "MJ-FW-001",
+    "description": "利用转动惯性储存能量的重型铜轮，用于平稳输出动力，减少速度波动。大型精密机关必备部件。",
+    "function": "储能",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 10.5,
+      "thickness": 1.5,
+      "weight": 2.2,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/flywheel-001.svg",
+    "thumbnail": "/images/parts/flywheel-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "刻漏计时器",
+        "mechanismImage": "/images/mechanisms/water-clock.svg",
+        "position": { "x": 40, "y": 45 },
+        "description": "稳速机构核心部件"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 60, "y": 45 },
+        "description": "动力输出稳速飞轮"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "axle-001",
+    "name": "车轴总成",
+    "code": "MJ-AX-001",
+    "description": "完整的车轮轴组件，包括轴杆、轴套和固定销。硬木轴杆外包铜套耐磨，两端有车轮安装位。",
+    "function": "支撑",
+    "material": "硬木",
+    "location": "滕州三号墓",
+    "dimensions": {
+      "length": 35.0,
+      "diameter": 3.8,
+      "weight": 0.8,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/axle-001.svg",
+    "thumbnail": "/images/parts/axle-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "连弩车",
+        "mechanismImage": "/images/mechanisms/crossbow-carriage.svg",
+        "position": { "x": 30, "y": 70 },
+        "description": "前轮轮轴"
+      },
+      {
+        "mechanismName": "机关木马",
+        "mechanismImage": "/images/mechanisms/wooden-horse.svg",
+        "position": { "x": 35, "y": 70 },
+        "description": "身体与腿部连接转轴"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "magnet-001",
+    "name": "磁石定向器",
+    "code": "MJ-MG-001",
+    "description": "利用天然磁石制作的定向装置，配合铜制支架和刻度盘使用。是墨家指南类机关的核心元件。",
+    "function": "感应",
+    "material": "磁石",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "length": 5.2,
+      "width": 1.8,
+      "height": 0.9,
+      "weight": 0.05,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/magnet-001.svg",
+    "thumbnail": "/images/parts/magnet-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "司南指南",
+        "mechanismImage": "/images/mechanisms/sinan-compass.svg",
+        "position": { "x": 50, "y": 50 },
+        "description": "核心磁性指示元件"
+      },
+      {
+        "mechanismName": "自动导向车",
+        "mechanismImage": "/images/mechanisms/south-pointing-chariot.svg",
+        "position": { "x": 50, "y": 30 },
+        "description": "方向校准参考元件"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "完整"
+  },
+  {
+    "id": "mirror-001",
+    "name": "铜制反光镜",
+    "code": "MJ-MR-001",
+    "description": "打磨光亮的青铜凹面镜，用于聚集光线或反射光影。配合光学机关使用，可产生特定的光影效果。",
+    "function": "光学",
+    "material": "青铜",
+    "location": "邹城墓群",
+    "dimensions": {
+      "diameter": 8.5,
+      "thickness": 0.5,
+      "weight": 0.4,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/mirror-001.svg",
+    "thumbnail": "/images/parts/mirror-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "光影机关",
+        "mechanismImage": "/images/mechanisms/light-shadow.svg",
+        "position": { "x": 30, "y": 40 },
+        "description": "光线反射聚焦元件"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "轻微氧化"
+  },
+  {
+    "id": "whistle-001",
+    "name": "铜制哨簧",
+    "code": "MJ-WS-001",
+    "description": "利用气流振动发声的铜制哨子，内置簧片。用于机关报警、信号传递等声学装置中。",
+    "function": "信号",
+    "material": "青铜",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "length": 6.8,
+      "diameter": 1.5,
+      "weight": 0.08,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/whistle-001.svg",
+    "thumbnail": "/images/parts/whistle-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "机关陷阱",
+        "mechanismImage": "/images/mechanisms/trap.svg",
+        "position": { "x": 70, "y": 35 },
+        "description": "陷阱触发报警装置"
+      },
+      {
+        "mechanismName": "气动机关",
+        "mechanismImage": "/images/mechanisms/pneumatic-device.svg",
+        "position": { "x": 30, "y": 30 },
+        "description": "气流驱动发声"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "weight-001",
+    "name": "铜权配重",
+    "code": "MJ-WT-001",
+    "description": "标准重量的铜制配重块，表面有刻度和铭文。用于衡器机关、定时装置中的重力驱动部件。",
+    "function": "配重",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "height": 4.5,
+      "diameter": 3.2,
+      "weight": 0.5,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/weight-001.svg",
+    "thumbnail": "/images/parts/weight-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "刻漏计时器",
+        "mechanismImage": "/images/mechanisms/water-clock.svg",
+        "position": { "x": 65, "y": 40 },
+        "description": "重力驱动配重"
+      },
+      {
+        "mechanismName": "吊桥机关",
+        "mechanismImage": "/images/mechanisms/drawbridge.svg",
+        "position": { "x": 30, "y": 70 },
+        "description": "平衡配重"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "完整"
+  },
+  {
+    "id": "bellow-001",
+    "name": "皮革风囊",
+    "code": "MJ-BL-001",
+    "description": "牛皮缝制的风囊，配合木质框架使用，可产生稳定气流。是气动机关和冶炼鼓风设备的核心部件。",
+    "function": "动力",
+    "material": "皮革",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "length": 25.0,
+      "width": 12.0,
+      "height": 8.0,
+      "weight": 0.35,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/bellow-001.svg",
+    "thumbnail": "/images/parts/bellow-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "气动机关",
+        "mechanismImage": "/images/mechanisms/pneumatic-device.svg",
+        "position": { "x": 35, "y": 55 },
+        "description": "气源产生装置"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "部分破损"
+  },
+  {
+    "id": "tripod-001",
+    "name": "铜制三脚架",
+    "code": "MJ-TP-001",
+    "description": "三点支撑的稳定支架，青铜铸造，可拆卸组装。用于架设精密仪器和机关装置。",
+    "function": "支撑",
+    "material": "青铜",
+    "location": "滕州三号墓",
+    "dimensions": {
+      "height": 18.0,
+      "legLength": 15.0,
+      "weight": 0.9,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/tripod-001.svg",
+    "thumbnail": "/images/parts/tripod-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "司南指南",
+        "mechanismImage": "/images/mechanisms/sinan-compass.svg",
+        "position": { "x": 50, "y": 70 },
+        "description": "底座支撑结构"
+      },
+      {
+        "mechanismName": "光影机关",
+        "mechanismImage": "/images/mechanisms/light-shadow.svg",
+        "position": { "x": 60, "y": 60 },
+        "description": "光学支架"
+      }
+    ],
+    "era": "战国晚期",
+    "condition": "完整"
+  },
+  {
+    "id": "cylinder-001",
+    "name": "木质气缸",
+    "code": "MJ-CY-001",
+    "description": "采用整木掏空制成的气缸，内壁打磨光滑。配合活塞使用，是气动机关的主体部件。",
+    "function": "动力",
+    "material": "硬木",
+    "location": "枣庄墓群",
+    "dimensions": {
+      "diameter": 6.5,
+      "length": 18.0,
+      "weight": 0.5,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/cylinder-001.svg",
+    "thumbnail": "/images/parts/cylinder-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "气动机关",
+        "mechanismImage": "/images/mechanisms/pneumatic-device.svg",
+        "position": { "x": 45, "y": 45 },
+        "description": "主体气缸结构"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "diffgear-001",
+    "name": "差动齿轮",
+    "code": "MJ-DG-001",
+    "description": "精密的差速传动装置，可将两个输入转速合成输出。是指南车等定向机关的核心技术。",
+    "function": "传动",
+    "material": "青铜",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 5.8,
+      "height": 3.2,
+      "weight": 0.45,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/diffgear-001.svg",
+    "thumbnail": "/images/parts/diffgear-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "自动导向车",
+        "mechanismImage": "/images/mechanisms/south-pointing-chariot.svg",
+        "position": { "x": 50, "y": 55 },
+        "description": "差速转向核心机构"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "diaphragm-001",
+    "name": "振动膜片",
+    "code": "MJ-DM-001",
+    "description": "极薄的铜制圆片，可随声波振动。用于声学感应和信号放大机关，配合共鸣腔使用效果更佳。",
+    "function": "感应",
+    "material": "青铜",
+    "location": "滕州二号墓",
+    "dimensions": {
+      "diameter": 7.2,
+      "thickness": 0.08,
+      "weight": 0.06,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/diaphragm-001.svg",
+    "thumbnail": "/images/parts/diaphragm-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "听瓮探测",
+        "mechanismImage": "/images/mechanisms/acoustic-detector.svg",
+        "position": { "x": 50, "y": 40 },
+        "description": "声波感应核心部件"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "轻微变形"
+  },
+  {
+    "id": "resonator-001",
+    "name": "铜制共鸣器",
+    "code": "MJ-RS-001",
+    "description": "空腔铜制共振腔，有特定的谐振频率。用于声学放大和声波检测，是墨家声学机关的重要组成部分。",
+    "function": "共鸣",
+    "material": "青铜",
+    "location": "邹城墓群",
+    "dimensions": {
+      "height": 12.0,
+      "diameter": 8.5,
+      "weight": 0.8,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/resonator-001.svg",
+    "thumbnail": "/images/parts/resonator-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "听瓮探测",
+        "mechanismImage": "/images/mechanisms/acoustic-detector.svg",
+        "position": { "x": 50, "y": 55 },
+        "description": "声波放大共鸣腔"
+      }
+    ],
+    "era": "战国中期",
+    "condition": "完整"
+  },
+  {
+    "id": "sundial-001",
+    "name": "日晷刻度盘",
+    "code": "MJ-SD-001",
+    "description": "石质圆盘上刻有精密的时间刻度，配合铜制指针使用。通过日影位置测定时间，是天文计时机关的基础。",
+    "function": "计时",
+    "material": "石料",
+    "location": "滕州一号墓",
+    "dimensions": {
+      "diameter": 15.0,
+      "thickness": 2.0,
+      "weight": 1.2,
+      "unit": "cm"
+    },
+    "sketchImage": "/images/parts/sundial-001.svg",
+    "thumbnail": "/images/parts/sundial-001-thumb.svg",
+    "assemblies": [
+      {
+        "mechanismName": "日晷计时器",
+        "mechanismImage": "/images/mechanisms/sundial.svg",
+        "position": { "x": 50, "y": 50 },
+        "description": "时间刻度基准盘"
+      }
+    ],
+    "era": "战国早期",
+    "condition": "完整"
+  }
+]

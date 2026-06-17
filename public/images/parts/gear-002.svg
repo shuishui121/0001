@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
+  <circle cx="100" cy="100" r="40" stroke="#5C4033" stroke-width="2"/>
+  <circle cx="100" cy="100" r="12" stroke="#5C4033" stroke-width="2"/>
+  <g stroke="#5C4033" stroke-width="1.8">
+    <path d="M100 60 L100 48 L106 44 L94 44 L100 48"/>
+    <path d="M100 140 L100 152 L106 156 L94 156 L100 152"/>
+    <path d="M60 100 L48 100 L44 94 L44 106 L48 100"/>
+    <path d="M140 100 L152 100 L156 94 L156 106 L152 100"/>
+    <path d="M72 72 L64 64 L60 67 L67 75 L72 72"/>
+    <path d="M128 128 L136 136 L140 133 L133 125 L128 128"/>
+    <path d="M72 128 L64 136 L60 133 L67 125 L72 128"/>
+    <path d="M128 72 L136 64 L140 67 L133 75 L128 72"/>
+    <path d="M86 56 L83 50 L79 52 L82 58 L86 56"/>
+    <path d="M114 144 L117 150 L121 148 L118 142 L114 144"/>
+    <path d="M56 114 L50 117 L52 121 L58 118 L56 114"/>
+    <path d="M144 86 L150 83 L148 79 L142 82 L144 86"/>
+  </g>
+  <line x1="100" y1="88" x2="100" y2="112" stroke="#5C4033" stroke-width="1"/>
+  <line x1="88" y1="100" x2="112" y2="100" stroke="#5C4033" stroke-width="1"/>
+  <text x="100" y="185" text-anchor="middle" font-size="9" fill="#5C4033" font-family="serif">从动齿轮</text>
+</svg>

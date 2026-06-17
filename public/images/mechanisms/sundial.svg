@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <ellipse cx="150" cy="160" rx="70" ry="20" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <circle cx="150" cy="110" r="50" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <circle cx="150" cy="110" r="40" stroke="#C4A35A" stroke-width="1.5" fill="none"/>
+  <circle cx="150" cy="110" r="30" stroke="#C4A35A" stroke-width="1" fill="none"/>
+  <path d="M150 60 L150 70" stroke="#5C4033" stroke-width="2"/>
+  <path d="M150 150 L150 160" stroke="#5C4033" stroke-width="2"/>
+  <path d="M100 110 L110 110" stroke="#5C4033" stroke-width="2"/>
+  <path d="M190 110 L200 110" stroke="#5C4033" stroke-width="2"/>
+  <path d="M150 110 L175 85" stroke="#8B4513" stroke-width="2"/>
+  <circle cx="150" cy="110" r="4" stroke="#5C4033" stroke-width="1.5" fill="#5C4033"/>
+  <text x="150" y="25" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">日晷计时器</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <ellipse cx="150" cy="170" rx="60" ry="20" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <line x1="150" y1="30" x2="150" y2="150" stroke="#5C4033" stroke-width="2"/>
+  <circle cx="150" cy="30" r="15" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+  <path d="M135 30 Q150 10 165 30" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+  <line x1="130" y1="170" x2="130" y2="100" stroke="#5C4033" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <ellipse cx="130" cy="100" rx="8" ry="5" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+  <line x1="170" y1="170" x2="170" y2="80" stroke="#5C4033" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <ellipse cx="170" cy="80" rx="8" ry="5" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+  <path d="M145 45 L155 45 L152 70 L148 70 Z" stroke="#5C4033" stroke-width="1.5" fill="#E8DFD0"/>
+  <text x="150" y="15" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">井中汲水器</text>
+</svg>

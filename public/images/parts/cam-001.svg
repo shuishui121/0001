@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
+  <circle cx="100" cy="100" r="45" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <path d="M100 55 Q125 60 130 80 Q135 100 120 115 Q105 130 85 125 Q65 120 60 100 Q55 80 70 65 Q85 55 100 55" 
+        stroke="#5C4033" stroke-width="2" fill="none"/>
+  <path d="M100 70 Q115 75 118 90 Q120 105 108 115 Q95 122 82 115 Q70 108 72 92 Q75 78 100 70" 
+        stroke="#5C4033" stroke-width="1.5" fill="none"/>
+  <circle cx="100" cy="100" r="8" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <circle cx="100" cy="100" r="3" stroke="#5C4033" stroke-width="1" fill="none"/>
+  <text x="100" y="185" text-anchor="middle" font-size="9" fill="#5C4033" font-family="serif">凸轮</text>
+</svg>

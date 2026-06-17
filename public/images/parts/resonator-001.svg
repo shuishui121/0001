@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
+  <ellipse cx="100" cy="100" rx="55" ry="30" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+  <ellipse cx="100" cy="100" rx="40" ry="20" stroke="#C4A35A" stroke-width="1.5" fill="none"/>
+  <ellipse cx="100" cy="100" rx="25" ry="12" stroke="#5C4033" stroke-width="1.5" fill="#E8DFD0"/>
+  <path d="M45 100 L25 90 L20 110 L45 115 Z" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <path d="M155 100 L175 90 L180 110 L155 115 Z" stroke="#5C4033" stroke-width="1.5" fill="#7A5A47"/>
+  <circle cx="100" cy="100" r="6" stroke="#5C4033" stroke-width="1" fill="#C4A35A"/>
+  <text x="100" y="160" text-anchor="middle" font-size="9" fill="#5C4033" font-family="serif">共鸣器</text>
+</svg>

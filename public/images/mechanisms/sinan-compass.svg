@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#5C4033" stroke-width="1.5">
+  <ellipse cx="150" cy="160" rx="60" ry="15" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+  <rect x="145" y="70" width="10" height="80" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+  <path d="M150 70 L130 50 L170 50 Z" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+  <ellipse cx="150" cy="50" rx="35" ry="8" stroke="#C4A35A" stroke-width="1.5" fill="#F5F0E8"/>
+  <path d="M150 50 L180 30" stroke="#5C4033" stroke-width="1.5"/>
+  <circle cx="150" cy="90" r="15" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+  <text x="150" y="20" text-anchor="middle" font-size="11" fill="#5C4033" font-family="serif">司南指南</text>
+</svg>
