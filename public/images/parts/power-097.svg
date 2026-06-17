@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-power-097" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-power-097)"/>
+  
+          <rect x="60" y="40" width="80" height="120" rx="10" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+          <circle cx="100" cy="100" r="25" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+          <path d="M100,100 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" stroke="#7A5A47" stroke-width="2" fill="none"/>
+          <line x1="100" y1="35" x2="100" y2="20" stroke="#7A5A47" stroke-width="2"/>
+          <line x1="100" y1="180" x2="100" y2="165" stroke="#7A5A47" stroke-width="2"/>
+          <rect x="70" y="170" width="60" height="10" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+        
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">长 40.3cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">皮革风囊</text>
+</svg>

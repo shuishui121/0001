@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-lever-164" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-lever-164)"/>
+  
+        <path d="M79.86552206699172,140 L94.86552206699172,115 L109.86552206699172,140 Z" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+        <line x1="15.4" y1="109.2" x2="174.3" y2="90.1" stroke="#5C4033" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="94.86552206699172" cy="99.64267503910948" r="6" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+        <circle cx="31.3" cy="87.3" r="10" stroke="#7A5A47" stroke-width="2" fill="#E8DFD0"/>
+        <text x="31.3" y="90.3" text-anchor="middle" font-size="10" fill="#5C4033">重</text>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">24.6×2cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">蜗杆减速器</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="tg-spring-082" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(92, 64, 51, 0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#tg-spring-082)"/>
+  <path d="M25,50 Q32,35 39,50 Q46,65 53,50 Q60,35 67,50 Q74,65 75,50" stroke="#7A5A47" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <rect x="20" y="40" width="6" height="20" stroke="#5C4033" stroke-width="1" fill="#F5F0E8"/>
+        <rect x="74" y="40" width="6" height="20" stroke="#5C4033" stroke-width="1" fill="#F5F0E8"/>
+  <text x="50" y="94" text-anchor="middle" fill="#7A5A47" font-size="6" font-family="Consolas, monospace">MJ-SP-082</text>
+</svg>

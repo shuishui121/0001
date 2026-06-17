@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-pulley-177" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-pulley-177)"/>
+  <rect x="70" y="25" width="60" height="10" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+          <line x1="85" y1="35" x2="85" y2="75" stroke="#7A5A47" stroke-width="1.5"/>
+          <circle cx="85" cy="100" r="22" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+          <circle cx="85" cy="100" r="6" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        
+          <line x1="115" y1="35" x2="115" y2="75" stroke="#7A5A47" stroke-width="1.5"/>
+          <circle cx="115" cy="100" r="22" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+          <circle cx="115" cy="100" r="6" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        
+          <path d="M85,78 Q100,110 115,78 Q130,110 145,78" stroke="#7A5A47" stroke-width="2" fill="none"/>
+        
+        <path d="M95,122 L95,160" stroke="#7A5A47" stroke-width="1.5"/>
+        <path d="M85,160 L105,160 L103,175 L87,175 Z" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">21.6×7.2cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">齿条升降杆</text>
+</svg>

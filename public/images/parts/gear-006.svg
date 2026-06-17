@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-006" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-006)"/>
+  
+        <circle cx="100" cy="100" r="66.04561042524006" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M151.04561042524006,100 L151.0,100.0 L158.6,107.4 L157.8,112.3 L148.2,116.8 L146.6,120.8 L150.5,130.6 L147.8,134.7 L137.2,134.9 L134.2,137.9 L133.7,148.5 L129.5,151.1 L119.8,147.1 L115.8,148.5 L111.1,158.0 L106.2,158.7 L98.9,151.0 L94.7,150.8 L86.5,157.5 L81.8,156.2 L78.3,146.2 L74.5,144.2 L64.3,147.0 L60.5,143.9 L61.4,133.4 L58.7,130.0 L48.3,128.4 L46.1,124.0 L51.1,114.8 L50.1,110.6 L41.2,104.9 L41.0,100.0 L49.4,93.6 L50.1,89.4 L44.2,80.6 L46.1,76.0 L56.3,73.6 L58.7,70.0 L57.0,59.6 L60.5,56.1 L70.9,58.1 L74.5,55.8 L77.1,45.6 L81.8,43.8 L90.4,49.9 L94.7,49.2 L101.2,41.0 L106.2,41.3 L111.7,50.3 L115.8,51.5 L125.1,46.6 L129.5,48.9 L130.9,59.3 L134.2,62.1 L144.7,61.4 L147.8,65.3 L144.7,75.4 L146.6,79.2 L156.5,82.9 L157.8,87.7 L150.9,95.7 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="41.045610425240056" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="22.335776748971192" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="8.934310699588478" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="131.7" cy="100.0" r="4.268814300411522" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="115.8" cy="127.4" r="5.875771604938272" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="84.2" cy="127.4" r="6.185661008230452" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">长 21.6cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">转向曲柄</text>
+</svg>

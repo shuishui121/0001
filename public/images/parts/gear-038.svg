@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-038" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-038)"/>
+  
+        <circle cx="100" cy="100" r="65.34542181069959" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M150.34542181069958,100 L150.3,100.0 L158.1,105.0 L157.8,108.3 L149.0,111.4 L148.3,114.2 L154.4,121.2 L153.1,124.2 L143.8,124.8 L142.4,127.2 L146.2,135.6 L144.1,138.2 L135.1,136.1 L133.0,138.0 L134.3,147.2 L131.5,149.1 L123.5,144.5 L120.9,145.8 L119.6,155.0 L116.4,156.0 L110.0,149.3 L107.2,149.8 L103.3,158.3 L100.0,158.3 L95.7,150.2 L92.8,149.8 L86.8,156.8 L83.6,156.0 L81.7,146.9 L79.1,145.8 L71.3,150.8 L68.5,149.1 L69.3,139.9 L67.0,138.0 L58.2,140.7 L55.9,138.2 L59.3,129.6 L57.6,127.2 L48.4,127.2 L46.9,124.2 L52.6,116.9 L51.7,114.2 L42.8,111.6 L42.2,108.3 L49.7,102.9 L49.7,100.0 L41.9,95.0 L42.2,91.7 L51.0,88.6 L51.7,85.8 L45.6,78.8 L46.9,75.8 L56.2,75.2 L57.6,72.8 L53.8,64.4 L55.9,61.8 L64.9,63.9 L67.0,62.0 L65.7,52.8 L68.5,50.9 L76.5,55.5 L79.1,54.2 L80.4,45.0 L83.6,44.0 L90.0,50.7 L92.8,50.2 L96.7,41.7 L100.0,41.7 L104.3,49.8 L107.2,50.2 L113.2,43.2 L116.4,44.0 L118.3,53.1 L120.9,54.2 L128.7,49.2 L131.5,50.9 L130.7,60.1 L133.0,62.0 L141.8,59.3 L144.1,61.8 L140.7,70.4 L142.4,72.8 L151.6,72.8 L153.1,75.8 L147.4,83.1 L148.3,85.8 L157.2,88.4 L157.8,91.7 L150.3,97.1 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="40.34542181069959" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="19.88147290809328" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="7.952589163237312" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="130.1" cy="100.0" r="6.757831790123457" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="115.1" cy="126.1" r="5.22744341563786" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="84.9" cy="126.1" r="6.085172325102881" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="69.9" cy="100.0" r="6.8217592592592595" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">长 14.1cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">铜制凸轮丁</text>
+</svg>

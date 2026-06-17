@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-022" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-022)"/>
+  
+        <circle cx="100" cy="100" r="68.18197016460906" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M153.18197016460906,100 L153.2,100.0 L160.4,109.6 L159.1,115.8 L148.6,121.6 L146.1,126.6 L147.5,138.5 L143.3,143.3 L131.3,143.0 L126.6,146.1 L121.9,157.1 L115.8,159.1 L105.6,152.9 L100.0,153.2 L90.4,160.4 L84.2,159.1 L78.4,148.6 L73.4,146.1 L61.5,147.5 L56.7,143.3 L57.0,131.3 L53.9,126.6 L42.9,121.9 L40.9,115.8 L47.1,105.6 L46.8,100.0 L39.6,90.4 L40.9,84.2 L51.4,78.4 L53.9,73.4 L52.5,61.5 L56.7,56.7 L68.7,57.0 L73.4,53.9 L78.1,42.9 L84.2,40.9 L94.4,47.1 L100.0,46.8 L109.6,39.6 L115.8,40.9 L121.6,51.4 L126.6,53.9 L138.5,52.5 L143.3,56.7 L143.0,68.7 L146.1,73.4 L157.1,78.1 L159.1,84.2 L152.9,94.4 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="43.181970164609055" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="22.617712620027433" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="9.047085048010974" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="132.9" cy="100.0" r="6.601851851851851" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="116.4" cy="128.5" r="6.458037551440329" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="83.6" cy="128.5" r="6.841229423868313" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="67.1" cy="100.0" r="6.90883487654321" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">直径 6.8cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">铜制从动齿轮丙</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-031" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-031)"/>
+  
+        <circle cx="100" cy="100" r="71.25557270233196" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M156.25557270233196,100 L156.3,100.0 L163.7,108.1 L162.9,113.4 L153.1,118.5 L151.4,122.9 L155.0,133.3 L152.0,137.8 L141.0,138.5 L137.6,141.8 L136.7,152.8 L132.1,155.6 L121.8,151.9 L117.4,153.5 L112.0,163.1 L106.7,163.9 L98.8,156.2 L94.1,155.9 L85.3,162.6 L80.1,161.1 L76.0,150.9 L71.9,148.7 L61.2,151.2 L57.0,147.8 L57.4,136.8 L54.5,133.1 L43.7,131.0 L41.3,126.1 L46.1,116.3 L45.0,111.7 L36.0,105.4 L35.7,100.0 L44.2,92.9 L45.0,88.3 L39.3,78.9 L41.3,73.9 L51.9,70.9 L54.5,66.9 L53.2,56.0 L57.0,52.2 L67.9,53.8 L71.9,51.3 L75.1,40.8 L80.1,38.9 L89.5,44.7 L94.1,44.1 L101.3,35.8 L106.7,36.1 L112.8,45.2 L117.4,46.5 L127.4,41.9 L132.1,44.4 L134.0,55.2 L137.6,58.2 L148.6,58.0 L152.0,62.2 L149.3,72.9 L151.4,77.1 L161.5,81.4 L162.9,86.6 L156.1,95.3 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="46.25557270233196" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="20.19491598079561" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="8.077966392318244" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="133.2" cy="100.0" r="4.271617798353909" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="116.6" cy="128.8" r="4.951105967078189" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="83.4" cy="128.8" r="6.870563271604938" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">直径 6.2cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">青铜主齿轮丁</text>
+</svg>

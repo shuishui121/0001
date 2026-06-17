@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-030" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-030)"/>
+  
+        <circle cx="100" cy="100" r="67.49888545953361" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M152.4988854595336,100 L152.5,100.0 L160.2,106.3 L159.6,110.5 L150.5,114.5 L149.3,118.0 L154.4,126.5 L152.4,130.2 L142.5,130.9 L140.2,133.7 L142.0,143.5 L138.9,146.3 L129.4,143.5 L126.2,145.5 L124.6,155.3 L120.7,156.9 L112.7,150.9 L109.1,151.7 L104.2,160.4 L100.0,160.5 L94.5,152.2 L90.9,151.7 L83.3,158.2 L79.3,156.9 L77.0,147.2 L73.8,145.5 L64.4,148.9 L61.1,146.3 L62.2,136.5 L59.8,133.7 L49.8,133.8 L47.6,130.2 L52.0,121.4 L50.7,118.0 L41.3,114.6 L40.4,110.5 L47.6,103.7 L47.5,100.0 L39.8,93.7 L40.4,89.5 L49.5,85.5 L50.7,82.0 L45.6,73.5 L47.6,69.8 L57.5,69.1 L59.8,66.3 L58.0,56.5 L61.1,53.7 L70.6,56.5 L73.8,54.5 L75.4,44.7 L79.3,43.1 L87.3,49.1 L90.9,48.3 L95.8,39.6 L100.0,39.5 L105.5,47.8 L109.1,48.3 L116.7,41.8 L120.7,43.1 L123.0,52.8 L126.2,54.5 L135.6,51.1 L138.9,53.7 L137.8,63.5 L140.2,66.3 L150.2,66.2 L152.4,69.8 L148.0,78.6 L149.3,82.0 L158.7,85.4 L159.6,89.5 L152.4,96.3 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="42.49888545953361" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="19.2468707133059" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="7.69874828532236" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="130.9" cy="100.0" r="4.339056069958848" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="115.4" cy="126.7" r="5.194470164609053" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="84.6" cy="126.7" r="5.40096450617284" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">直径 6.3cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">螺旋传动杆丙</text>
+</svg>

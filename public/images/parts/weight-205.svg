@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-weight-205" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-weight-205)"/>
+  
+        <rect x="65" y="60" width="70" height="15" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+        <path d="M70,75 L80,75 L85,150 L65,150 Z" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <path d="M130,75 L120,75 L115,150 L135,150 Z" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <rect x="60" y="150" width="80" height="25" rx="5" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <text x="100" y="168" text-anchor="middle" font-size="12" font-family="SimSun, serif" fill="#5C4033" font-weight="bold">权</text>
+        <circle cx="100" cy="68" r="5" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <line x1="100" y1="45" x2="100" y2="63" stroke="#7A5A47" stroke-width="1.5"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">直径 6cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">石质配重</text>
+</svg>

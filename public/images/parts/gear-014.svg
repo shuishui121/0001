@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-014" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-014)"/>
+  
+        <circle cx="100" cy="100" r="69.24669924554183" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M154.24669924554183,100 L154.2,100.0 L161.6,109.0 L160.4,114.9 L150.2,120.5 L148.0,125.2 L150.4,136.6 L146.6,141.3 L135.0,141.5 L130.8,144.6 L127.6,155.8 L122.1,158.2 L111.7,153.0 L106.5,153.9 L98.5,162.2 L92.5,161.8 L85.7,152.3 L80.8,150.7 L69.7,154.4 L64.6,151.2 L63.1,139.7 L59.4,136.0 L47.9,134.1 L44.9,128.9 L48.8,118.0 L47.3,113.0 L38.0,106.0 L37.8,100.0 L46.3,92.2 L47.3,87.0 L42.3,76.5 L44.9,71.1 L56.1,68.1 L59.4,64.0 L59.9,52.4 L64.6,48.8 L76.0,51.4 L80.8,49.3 L86.6,39.2 L92.5,38.2 L101.3,45.8 L106.5,46.1 L116.4,39.9 L122.1,41.8 L126.4,52.6 L130.8,55.4 L142.4,54.4 L146.6,58.7 L145.4,70.3 L148.0,74.8 L158.7,79.3 L160.4,85.1 L154.0,94.8 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="44.24669924554184" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="15.66289437585734" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="6.2651577503429365" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="130.0" cy="100.0" r="4.648122427983539" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="115.0" cy="125.9" r="5.8206661522633745" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="85.0" cy="125.9" r="6.649845679012346" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="70.0" cy="100.0" r="5.848623971193415" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="85.0" cy="74.1" r="5.685519547325103" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">19.7×9.3cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">铜链传动乙</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-lever-168" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-lever-168)"/>
+  
+        <path d="M84.71063018661998,140 L99.71063018661998,115 L114.71063018661998,140 Z" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+        <line x1="20.2" y1="90.4" x2="179.2" y2="108.9" stroke="#5C4033" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="99.71063018661998" cy="99.68922381135678" r="6" stroke="#5C4033" stroke-width="2" fill="#C4A35A"/>
+        <circle cx="36.1" cy="72.3" r="10" stroke="#7A5A47" stroke-width="2" fill="#E8DFD0"/>
+        <text x="36.1" y="75.3" text-anchor="middle" font-size="10" fill="#5C4033">重</text>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">23.7×8.2cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">肘节增力机构</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-support-053" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-support-053)"/>
+  
+          <rect x="80" y="40" width="40" height="10" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+          <rect x="85" y="50" width="8" height="110" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+          <rect x="107" y="50" width="8" height="110" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+          <rect x="70" y="160" width="60" height="10" stroke="#5C4033" stroke-width="2" fill="#7A5A47"/>
+          <line x1="89" y1="80" x2="111" y2="130" stroke="#7A5A47" stroke-width="1.5"/>
+          <line x1="111" y1="80" x2="89" y2="130" stroke="#7A5A47" stroke-width="1.5"/>
+        
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">直径 4.7cm</text>
+  </g>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">木轴铜套轴承乙</text>
+</svg>

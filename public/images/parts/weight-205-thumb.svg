@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="tg-weight-205" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(92, 64, 51, 0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#tg-weight-205)"/>
+  <rect x="33" y="30" width="34" height="7" stroke="#5C4033" stroke-width="1" fill="#7A5A47"/>
+        <path d="M35,37 L42,37 L44,72 L33,72 Z" stroke="#5C4033" stroke-width="1" fill="#F5F0E8"/>
+        <path d="M65,37 L58,37 L56,72 L67,72 Z" stroke="#5C4033" stroke-width="1" fill="#F5F0E8"/>
+        <rect x="28" y="72" width="44" height="12" rx="2" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+        <text x="50" y="81" text-anchor="middle" font-size="7" font-family="SimSun, serif" fill="#5C4033" font-weight="bold">权</text>
+  <text x="50" y="94" text-anchor="middle" fill="#7A5A47" font-size="6" font-family="Consolas, monospace">MJ-WE-205</text>
+</svg>

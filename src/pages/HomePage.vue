@@ -86,9 +86,7 @@ function handlePartClick(part: Part) {
         </div>
 
         <div class="content-body" :class="{ 'no-sidebar': !showSidebar }">
-          <Transition name="sidebar-fade" mode="out-in">
-            <CategorySidebar v-if="showSidebar" key="sidebar" />
-          </Transition>
+          <CategorySidebar v-if="showSidebar" class="sidebar-panel" />
 
           <div class="parts-section">
             <div class="parts-header">
@@ -419,15 +417,19 @@ function handlePartClick(part: Part) {
   box-shadow: 0 4px 12px rgba(196, 163, 90, 0.4);
 }
 
-.sidebar-fade-enter-active,
-.sidebar-fade-leave-active {
-  transition: all 0.3s ease;
+.sidebar-panel {
+  animation: slideInLeft 0.35s ease-out;
 }
 
-.sidebar-fade-enter-from,
-.sidebar-fade-leave-to {
-  opacity: 0;
-  transform: translateX(-20px);
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1024px) {

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="tg-resonate-210" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(92, 64, 51, 0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#tg-resonate-210)"/>
+  <path d="M25,35 L25,65 Q50,78 75,65 L75,35 Q50,28 25,35 Z" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+        <path d="M35,45 Q50,42 65,45 L65,52 Q50,55 35,52 Z" stroke="#C4A35A" stroke-width="1" fill="#7A5A47" opacity="0.2"/>
+        <circle cx="50" cy="62" r="6" stroke="#7A5A47" stroke-width="1" fill="#7A5A47" opacity="0.2"/>
+  <text x="50" y="94" text-anchor="middle" fill="#7A5A47" font-size="6" font-family="Consolas, monospace">MJ-RE-210</text>
+</svg>

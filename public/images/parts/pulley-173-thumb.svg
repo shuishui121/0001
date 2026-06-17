@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="tg-pulley-173" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(92, 64, 51, 0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#tg-pulley-173)"/>
+  <circle cx="38" cy="50" r="12" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+        <circle cx="62" cy="50" r="12" stroke="#5C4033" stroke-width="1.5" fill="#F5F0E8"/>
+        <circle cx="38" cy="50" r="3" stroke="#5C4033" stroke-width="1" fill="#C4A35A"/>
+        <circle cx="62" cy="50" r="3" stroke="#5C4033" stroke-width="1" fill="#C4A35A"/>
+        <line x1="38" y1="30" x2="62" y2="30" stroke="#7A5A47" stroke-width="1.5"/>
+  <text x="50" y="94" text-anchor="middle" fill="#7A5A47" font-size="6" font-family="Consolas, monospace">MJ-PU-173</text>
+</svg>

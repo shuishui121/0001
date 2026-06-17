@@ -1,21 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#5C4033" stroke-width="2">
-  <circle cx="100" cy="100" r="60" stroke="#5C4033" stroke-width="2"/>
-  <circle cx="100" cy="100" r="20" stroke="#5C4033" stroke-width="2"/>
-  <g stroke="#5C4033" stroke-width="2">
-    <path d="M100 40 L100 25 L110 20 L90 20 L100 25"/>
-    <path d="M100 160 L100 175 L110 180 L90 180 L100 175"/>
-    <path d="M40 100 L25 100 L20 90 L20 110 L25 100"/>
-    <path d="M160 100 L175 100 L180 90 L180 110 L175 100"/>
-    <path d="M55 55 L45 45 L38 48 L48 58 L55 55"/>
-    <path d="M145 145 L155 155 L162 152 L152 142 L145 145"/>
-    <path d="M55 145 L45 155 L38 152 L48 142 L55 145"/>
-    <path d="M145 55 L155 45 L162 48 L152 58 L145 55"/>
-    <path d="M75 35 L72 28 L68 32 L72 38 L75 35"/>
-    <path d="M125 165 L128 172 L132 168 L128 162 L125 165"/>
-    <path d="M35 125 L28 128 L32 132 L38 128 L35 125"/>
-    <path d="M165 75 L172 72 L168 68 L162 72 L165 75"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="grid-gear-001" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(92, 64, 51, 0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#grid-gear-001)"/>
+  
+        <circle cx="100" cy="100" r="68.9028635116598" stroke="#C4A35A" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+        <path d="M153.9028635116598,100 L153.9,100.0 L161.7,105.1 L161.3,108.4 L152.6,111.7 L151.9,114.5 L158.0,121.5 L156.8,124.7 L147.5,125.5 L146.1,128.0 L150.1,136.4 L148.0,139.1 L138.9,137.3 L136.8,139.4 L138.4,148.5 L135.7,150.6 L127.4,146.4 L124.8,147.9 L123.9,157.1 L120.7,158.3 L113.8,152.1 L111.0,152.8 L107.6,161.4 L104.2,161.8 L99.3,153.9 L96.3,153.8 L90.7,161.2 L87.4,160.6 L84.7,151.7 L81.9,150.8 L74.6,156.4 L71.5,155.0 L71.4,145.7 L68.9,144.0 L60.3,147.5 L57.7,145.2 L60.1,136.3 L58.2,134.0 L48.9,135.0 L47.1,132.2 L51.8,124.1 L50.6,121.5 L41.4,119.9 L40.4,116.7 L47.1,110.2 L46.6,107.3 L38.2,103.4 L38.1,100.0 L46.3,95.6 L46.6,92.7 L39.6,86.6 L40.4,83.3 L49.5,81.3 L50.6,78.5 L45.4,70.8 L47.1,67.8 L56.4,68.3 L58.2,66.0 L55.3,57.1 L57.7,54.8 L66.6,57.7 L68.9,56.0 L68.6,46.7 L71.5,45.0 L79.2,50.3 L81.9,49.2 L84.1,40.2 L87.4,39.4 L93.4,46.5 L96.3,46.2 L100.8,38.1 L104.2,38.2 L108.1,46.7 L111.0,47.2 L117.5,40.6 L120.7,41.7 L122.1,50.9 L124.8,52.1 L132.9,47.6 L135.7,49.4 L134.6,58.7 L136.8,60.6 L145.8,58.4 L148.0,60.9 L144.5,69.5 L146.1,72.0 L155.3,72.3 L156.8,75.3 L151.0,82.6 L151.9,85.5 L160.8,88.2 L161.3,91.6 L153.8,97.1 Z" stroke="#5C4033" stroke-width="2" fill="#F5F0E8"/>
+        <circle cx="100" cy="100" r="43.90286351165981" stroke="#5C4033" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="100" r="17.64673353909465" stroke="#5C4033" stroke-width="2" fill="#E8DFD0"/>
+        <circle cx="100" cy="100" r="7.058693415637861" stroke="#5C4033" stroke-width="1.5" fill="#C4A35A"/>
+        <circle cx="130.8" cy="100.0" r="4.834323559670782" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="115.4" cy="126.7" r="6.677391975308642" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="84.6" cy="126.7" r="4.056725823045268" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="69.2" cy="100.0" r="4.240843621399177" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/><circle cx="84.6" cy="73.3" r="6.720486111111111" stroke="#7A5A47" stroke-width="1" fill="#E8DFD0"/>
+      
+  <g stroke="#7A5A47" stroke-width="1" fill="#7A5A47" font-size="9" font-family="Consolas, monospace">
+    <line x1="25" y1="185" x2="175" y2="185"/>
+    <line x1="25" y1="180" x2="25" y2="190"/>
+    <line x1="175" y1="180" x2="175" y2="190"/>
+    <text x="100" y="195" text-anchor="middle">22.7×4.1cm</text>
   </g>
-  <line x1="100" y1="80" x2="100" y2="120" stroke="#5C4033" stroke-width="1.5"/>
-  <line x1="80" y1="100" x2="120" y2="100" stroke="#5C4033" stroke-width="1.5"/>
-  <text x="100" y="190" text-anchor="middle" font-size="10" fill="#5C4033" font-family="serif">主齿轮</text>
+  <text x="100" y="172" text-anchor="middle" fill="#5C4033" font-size="11" font-family="SimSun, STSong, serif" font-weight="bold">青铜主齿轮</text>
 </svg>
